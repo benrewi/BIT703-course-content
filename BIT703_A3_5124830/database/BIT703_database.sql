@@ -1,8 +1,8 @@
 DROP TABLE IF EXISTS `audit_log`;
-
 DROP TABLE IF EXISTS `users`;
-
 DROP TABLE IF EXISTS `access_levels`;
+CREATE USER IF NOT EXISTS 'dbadmin'@'localhost' IDENTIFIED BY 'letSadmin';
+GRANT SELECT, INSERT, UPDATE, DELETE ON `BIT703`.* TO 'dbadmin'@'localhost';
 
 CREATE TABLE
     IF NOT EXISTS `access_levels` (

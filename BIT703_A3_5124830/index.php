@@ -10,7 +10,6 @@ require_admin_session();
     <meta charset="UTF-8">
     <title>Admin Dashboard - Aotearoa Adventure Gear</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet">
@@ -25,7 +24,7 @@ require_admin_session();
     include_once "./config/dbconnect.php";
 
     $activeUsers = 0;
-    $result = mysqli_query($conn, "SELECT COUNT(*) AS total FROM users WHERE is_active = '1'");
+    $result = mysqli_query($conn, "SELECT COUNT(*) AS total FROM users WHERE is_active = 1");
     if ($result) {
         $row = mysqli_fetch_assoc($result);
         $activeUsers = $row["total"];
@@ -160,7 +159,7 @@ require_admin_session();
 
             if (result == "invalid_name") {
                 const errorBox = document.getElementById("add-error");
-                errorBox.textContent = "Please enter a first and last name of up to 50 characters.";
+                errorBox.textContent = "Names can only be up to 50 characters and cannot contain special characters.";
                 errorBox.classList.remove("d-none");
                 return;
             }
@@ -241,7 +240,7 @@ require_admin_session();
 
             if (result == "invalid_name") {
                 const errorBox = document.getElementById("edit-error");
-                errorBox.textContent = "Please enter a first and last name of up to 50 characters.";
+                errorBox.textContent = "Names can only be up to 50 characters and cannot contain special characters.";
                 errorBox.classList.remove("d-none");
                 return;
             }

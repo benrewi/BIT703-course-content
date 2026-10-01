@@ -27,6 +27,11 @@ if (
     exit;
 }
 
+if (!preg_match("/^[a-zA-Z-' ]*$/", $firstName) || !preg_match("/^[a-zA-Z-' ]*$/", $lastName)) {
+    echo "invalid_name";
+    exit;
+}
+
 $email = strtolower(trim($_POST['email']));
 if (strlen($email) > 254 || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     echo "invalid_email";
