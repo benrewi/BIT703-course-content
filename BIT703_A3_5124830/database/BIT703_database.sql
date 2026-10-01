@@ -84,9 +84,9 @@ VALUES
 CREATE TABLE
     IF NOT EXISTS `audit_log` (
         `log_id` int NOT NULL AUTO_INCREMENT,
-        `action_user_id` int NOT NULL,
+        `action_user_name` varchar(101) DEFAULT NULL,
         `action` varchar(255) NOT NULL,
-        `target_user_id` int DEFAULT NULL,
+        `target_user_name` varchar(101) DEFAULT NULL,
         `details` varchar(255) DEFAULT NULL,
         `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY (`log_id`)

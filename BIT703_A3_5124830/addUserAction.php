@@ -68,5 +68,5 @@ if (!addUser($conn, $user)) {
     echo "error";
     exit;
 }
-logAudit($conn, $_SESSION['user_id'], 'ADD_USER', null, "Added " . $email);
+logAudit($conn, 'ADD_USER', $firstName . " " . $lastName, "Email: " . $email);
 echo "success";

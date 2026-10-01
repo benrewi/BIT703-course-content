@@ -124,12 +124,21 @@ function deleteUser($conn, $userId): bool
     }
 }
 
-function logAudit($conn, $adminId, $action, $targetId, $details): bool
+function logAudit($conn, $action, $targetName, $details): bool
 {
-    $query = "INSERT INTO audit_log (action_user_id, action, target_user_id, details) VALUES (?, ?, ?, ?)";
+    $query = "INSERT INTO audit_log (action_user_name, action, target_user_name, details) VALUES (?, ?, ?, ?)";
     try {
+        $adminId = $_SESSION['user_id'];
+        $nameStmt = mysqli_prepare($conn, "SELECT first_name, last_name FROM users WHERE user_id = ?");
+        mysqli_stmt_bind_param($nameStmt, 'i', $adminId);
+        mysqli_stmt_execute($nameStmt);
+        mysqli_stmt_bind_result($nameStmt, $adminFirst, $adminLast);
+        mysqli_stmt_fetch($nameStmt);
+        mysqli_stmt_close($nameStmt);
+        $adminName = $adminFirst . " " . $adminLast;
+
         $stmt = mysqli_prepare($conn, $query);
-        mysqli_stmt_bind_param($stmt, 'isis', $adminId, $action, $targetId, $details);
+        mysqli_stmt_bind_param($stmt, 'ssss', $adminName, $action, $targetName, $details);
         $ok = mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
         return $ok;
@@ -138,4 +147,8 @@ function logAudit($conn, $adminId, $action, $targetId, $details): bool
         return false;
     }
 }
+
+logAudit($conn, 'UPDATE_USER', $firstName . " " . $lastName, "Email: " . $email);
+
 ?>
+
