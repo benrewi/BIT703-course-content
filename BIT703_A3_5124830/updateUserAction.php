@@ -72,5 +72,6 @@ if (!updateUser($conn, $user)) {
     echo "error";
     exit;
 }
+
 logAudit($conn, $_SESSION['user_id'], 'UPDATE_USER', $userId, "Updated " . $email);
 echo "success";

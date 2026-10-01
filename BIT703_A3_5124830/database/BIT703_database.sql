@@ -1,5 +1,7 @@
 DROP TABLE IF EXISTS `audit_log`;
+
 DROP TABLE IF EXISTS `users`;
+
 DROP TABLE IF EXISTS `access_levels`;
 
 CREATE TABLE
@@ -7,7 +9,7 @@ CREATE TABLE
         `access_level_id` int NOT NULL,
         `access_level_name` varchar(254) NOT NULL,
         PRIMARY KEY (`access_level_id`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+    ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
 INSERT INTO
     `access_levels` (`access_level_id`, `access_level_name`)
@@ -29,25 +31,63 @@ CREATE TABLE
         PRIMARY KEY (`user_id`),
         UNIQUE KEY `email` (`email`),
         CONSTRAINT `fk_access_level` FOREIGN KEY (`access_level_id`) REFERENCES `access_levels` (`access_level_id`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+    ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
-    INSERT INTO
-        `users` (`user_id`, `first_name`, `last_name`, `email`, `password`, `access_level_id`, `is_active`)
-    VALUES
-        (1, "Amanda", "Admin", "amanda.admin@adventuregear.com", "$2y$10$jZhvcA/QVy5FIsdTnj27POn5LHt80w.xGhD2B8GK2KzxMtqAR6RLe", 1, true),
-        (2, "Morris", "Manager", "morris.manager@adventuregear.com", "$2y$10$jZhvcA/QVy5FIsdTnj27POn5LHt80w.xGhD2B8GK2KzxMtqAR6RLe", 2, true),
-        (3, "Sammy", "Salesperson", "sammy.salesperson@adventuregear.com", "$2y$10$jZhvcA/QVy5FIsdTnj27POn5LHt80w.xGhD2B8GK2KzxMtqAR6RLe", 3, true),
-        (4, "Cathy", "Customer", "cathy.customer@customer.com", "$2y$10$jZhvcA/QVy5FIsdTnj27POn5LHt80w.xGhD2B8GK2KzxMtqAR6RLe", 4, true);
-
+INSERT INTO
+    `users` (
+        `user_id`,
+        `first_name`,
+        `last_name`,
+        `email`,
+        `password`,
+        `access_level_id`,
+        `is_active`
+    )
+VALUES
+    (
+        1,
+        "Amanda",
+        "Admin",
+        "amanda.admin@adventuregear.com",
+        "$2y$10$jZhvcA/QVy5FIsdTnj27POn5LHt80w.xGhD2B8GK2KzxMtqAR6RLe",
+        1,
+        true
+    ),
+    (
+        2,
+        "Morris",
+        "Manager",
+        "morris.manager@adventuregear.com",
+        "$2y$10$jZhvcA/QVy5FIsdTnj27POn5LHt80w.xGhD2B8GK2KzxMtqAR6RLe",
+        2,
+        true
+    ),
+    (
+        3,
+        "Sammy",
+        "Salesperson",
+        "sammy.salesperson@adventuregear.com",
+        "$2y$10$jZhvcA/QVy5FIsdTnj27POn5LHt80w.xGhD2B8GK2KzxMtqAR6RLe",
+        3,
+        true
+    ),
+    (
+        4,
+        "Cathy",
+        "Customer",
+        "cathy.customer@customer.com",
+        "$2y$10$jZhvcA/QVy5FIsdTnj27POn5LHt80w.xGhD2B8GK2KzxMtqAR6RLe",
+        4,
+        true
+    );
 
 CREATE TABLE
     IF NOT EXISTS `audit_log` (
         `log_id` int NOT NULL AUTO_INCREMENT,
-        `user_id` int NOT NULL,
+        `action_user_id` int NOT NULL,
         `action` varchar(255) NOT NULL,
         `target_user_id` int DEFAULT NULL,
         `details` varchar(255) DEFAULT NULL,
         `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-        PRIMARY KEY (`log_id`),
-        CONSTRAINT `fk_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+        PRIMARY KEY (`log_id`)
+    ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;

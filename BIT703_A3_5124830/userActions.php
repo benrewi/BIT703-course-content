@@ -126,10 +126,10 @@ function deleteUser($conn, $userId): bool
 
 function logAudit($conn, $adminId, $action, $targetId, $details): bool
 {
-    $query = "INSERT INTO audit_log (admin_user_id, action, target_user_id, details) VALUES (?, ?, ?, ?)";
+    $query = "INSERT INTO audit_log (action_user_id, action, target_user_id, details) VALUES (?, ?, ?, ?)";
     try {
         $stmt = mysqli_prepare($conn, $query);
-        mysqli_stmt_bind_param($stmt, 'isii', $adminId, $action, $targetId, $details);
+        mysqli_stmt_bind_param($stmt, 'isis', $adminId, $action, $targetId, $details);
         $ok = mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
         return $ok;
