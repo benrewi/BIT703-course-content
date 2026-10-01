@@ -1,0 +1,25 @@
+body {
+  font-family: 'Figtree', sans-serif;
+  background-image: url("images/bg-pattern.png");
+  background-repeat: repeat;
+  background-size: 320px 320px;
+}
+
+.sidebar-panel {
+    width: 370px;
+    border-radius: 0 250px 0 0;
+}
+
+.ls-wide { letter-spacing: 0.09em; }
+.ls-wider { letter-spacing: 0.12em; }
+
+.login-main {
+    margin-left: 370px;
+    min-height: 100vh;
+}
+.page-content{
+    margin-left: 450px;
+    padding: 20px;
+    margin-right: 100px;
+}
+

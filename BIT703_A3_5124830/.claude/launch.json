@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "static-preview",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "4173"],
+      "port": 4173
+    },
+    {
+      "name": "oop-prototype",
+      "runtimeExecutable": "/Applications/MAMP/bin/php/php8.3.30/bin/php",
+      "runtimeArgs": ["-S", "localhost:4174", "-t", "oop-prototype"],
+      "port": 4174
+    }
+  ]
+}
