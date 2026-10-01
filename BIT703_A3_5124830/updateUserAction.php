@@ -73,5 +73,6 @@ if (!updateUser($conn, $user)) {
     exit;
 }
 
-logAudit($conn, 'UPDATE_USER', $firstName . " " . $lastName, "Email: " . $email);
+logAudit($conn, 'UPDATE_USER', $firstName . " " . $lastName);
 echo "success";
+?>

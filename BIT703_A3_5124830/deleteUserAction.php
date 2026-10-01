@@ -28,10 +28,10 @@ if ($userId === (int) $_SESSION['user_id']) {
     exit;
 }
 
-$infoStmt = mysqli_prepare($conn, "SELECT first_name, last_name, email FROM users WHERE user_id = ?");
+$infoStmt = mysqli_prepare($conn, "SELECT first_name, last_name FROM users WHERE user_id = ?");
 mysqli_stmt_bind_param($infoStmt, 'i', $userId);
 mysqli_stmt_execute($infoStmt);
-mysqli_stmt_bind_result($infoStmt, $first, $last, $email);
+mysqli_stmt_bind_result($infoStmt, $first, $last);
 mysqli_stmt_fetch($infoStmt);
 mysqli_stmt_close($infoStmt);
 
@@ -41,6 +41,7 @@ if (!deleteUser($conn, $userId)) {
     exit;
 }
 
-logAudit($conn, 'DELETE_USER', $first . " " . $last, "Email: " . $email);
+logAudit($conn, 'DELETE_USER', $first . " " . $last);
 
 echo "success";
+?>

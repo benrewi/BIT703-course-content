@@ -87,7 +87,6 @@ CREATE TABLE
         `action_user_name` varchar(101) DEFAULT NULL,
         `action` varchar(255) NOT NULL,
         `target_user_name` varchar(101) DEFAULT NULL,
-        `details` varchar(255) DEFAULT NULL,
         `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY (`log_id`)
     ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
