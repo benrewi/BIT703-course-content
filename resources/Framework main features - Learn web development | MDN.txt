@@ -1,0 +1,183 @@
+# Framework main features
+
+* [Previous](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FLearn%5Fweb%5Fdevelopment%2FCore%2FFrameworks%5Flibraries%2FIntroduction)
+* [Overview: JavaScript frameworks and libraries](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FLearn%5Fweb%5Fdevelopment%2FCore%2FFrameworks%5Flibraries)
+* [Next](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FLearn%5Fweb%5Fdevelopment%2FCore%2FFrameworks%5Flibraries%2FReact%5Fgetting%5Fstarted)
+
+Each major JavaScript framework has a different approach to updating the DOM, handling browser events, and providing an enjoyable developer experience. This article will explore the main features of "the big 4" frameworks, looking at how frameworks tend to work from a high level, and the differences between them.
+
+| Prerequisites:     | Familiarity with the core [HTML](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FLearn%5Fweb%5Fdevelopment%2FCore%2FStructuring%5Fcontent), [CSS](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FLearn%5Fweb%5Fdevelopment%2FCore%2FStyling%5Fbasics), and [JavaScript](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FLearn%5Fweb%5Fdevelopment%2FCore%2FScripting) languages. |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Learning outcomes: | Understand the main features provided by JavaScript frameworks.                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+
+## In this article
+
+* [Domain-specific languages](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FLearn%5Fweb%5Fdevelopment%2FCore%2FFrameworks%5Flibraries%2FMain%5Ffeatures%23domain-specific%5Flanguages)
+* [Writing components](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FLearn%5Fweb%5Fdevelopment%2FCore%2FFrameworks%5Flibraries%2FMain%5Ffeatures%23writing%5Fcomponents)
+* [Styling components](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FLearn%5Fweb%5Fdevelopment%2FCore%2FFrameworks%5Flibraries%2FMain%5Ffeatures%23styling%5Fcomponents)
+* [Handling dependencies](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FLearn%5Fweb%5Fdevelopment%2FCore%2FFrameworks%5Flibraries%2FMain%5Ffeatures%23handling%5Fdependencies)
+* [Rendering elements](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FLearn%5Fweb%5Fdevelopment%2FCore%2FFrameworks%5Flibraries%2FMain%5Ffeatures%23rendering%5Felements)
+* [Routing](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FLearn%5Fweb%5Fdevelopment%2FCore%2FFrameworks%5Flibraries%2FMain%5Ffeatures%23routing)
+* [Testing](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FLearn%5Fweb%5Fdevelopment%2FCore%2FFrameworks%5Flibraries%2FMain%5Ffeatures%23testing)
+* [Summary](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FLearn%5Fweb%5Fdevelopment%2FCore%2FFrameworks%5Flibraries%2FMain%5Ffeatures%23summary)
+
+[Google Cloud Data and AI in One Platform BigQuery has built-in AI-powered data insights to improve productivity and optimize costs. Start Free](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fdeveloper.mozilla.org%2Fpong%2Fclick%3Fcode%3DaHR0cHM6Ly9zcnYuYnV5c2VsbGFkcy5jb20vYWRzL2NsaWNrL3gvR1RORDQyNzdDVFlERTVRSUNLU0xZS1FVRjZZRDVLM0VDQVlJNFozSkNBQUlUMlFNQ0U3RDVLSktDWVNENjJKV0NLQkRDSzdMQ1lCREw1M0lDS1NEUFozSkNBQUlUSzNVQ0VBRFRLM0sySldOQUJZ.l09Z2e%252BP4cSh8y1Bdz%252FL2JpkIpfdNy%252BxM4cst1oBbw8%253D%26version%3D2)
+
+[Ad](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fadvertising)
+
+[Don't want to see ads?](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fplus%3Fref%3Dnope)
+
+## [Domain-specific languages](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FLearn%5Fweb%5Fdevelopment%2FCore%2FFrameworks%5Flibraries%2FMain%5Ffeatures%23domain-specific%5Flanguages)
+
+Most frameworks allow you to use domain-specific languages (DSLs) in order to build your applications. In particular, React has popularized the use of **JSX** for writing its components, while Ember utilizes **Handlebars**. Unlike HTML, these languages know how to read data variables, and this data can be used to streamline the process of writing your UI.
+
+Angular apps often make heavy use of **TypeScript**. TypeScript is not concerned with the writing of user interfaces, but it is a domain-specific language, and has significant differences to vanilla JavaScript.
+
+DSLs can't be read by the browser directly; they must be transformed into JavaScript or HTML first. Framework tooling generally includes the required tools to handle this step, or can be adjusted to include this step. While it is possible to build framework apps without using these domain-specific languages, embracing them will streamline your development process and make it easier to find help from the communities around those frameworks.
+
+### [JSX](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FLearn%5Fweb%5Fdevelopment%2FCore%2FFrameworks%5Flibraries%2FMain%5Ffeatures%23jsx)
+
+[JSX](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Freact.dev%2Flearn%2Fwriting-markup-with-jsx), which stands for JavaScript and XML, is an extension of JavaScript that brings HTML-like syntax to a JavaScript environment. It was invented by the React team for use in React applications, but can be used to develop other applications — like Vue apps, for instance.
+
+The following shows a simple JSX example:
+
+jsx Copy
+
+```
+const subject = "World";
+const header = (
+  <header>
+    <h1>Hello, {subject}!</h1>
+  </header>
+);
+
+```
+
+This expression represents an HTML [<header>](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FHTML%2FReference%2FElements%2Fheader) element with an [<h1>](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FHTML%2FReference%2FElements%2FHeading%5FElements) element inside. The curly braces around `{subject}` tell the application to read the value of the `subject` constant and insert it into our `</h1><h1>` .
+
+When used with React, the JSX from the previous snippet would be compiled into this:
+
+js Copy
+
+```
+const subject = "World";
+const header = React.createElement(
+  "header",
+  null,
+  React.createElement("h1", null, "Hello, ", subject, "!"),
+);
+
+```
+
+When ultimately rendered by the browser, the above snippet will produce HTML that looks like this:
+
+html Copy
+
+```
+<header>
+  <h1>Hello, World!</h1>
+</header>
+
+```
+
+### [Handlebars](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FLearn%5Fweb%5Fdevelopment%2FCore%2FFrameworks%5Flibraries%2FMain%5Ffeatures%23handlebars)
+
+The [Handlebars](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fhandlebarsjs.com%2F) templating language is not specific to Ember applications, but it is heavily utilized in Ember apps. Handlebars code resembles HTML, but it has the option of pulling data in from elsewhere. This data can be used to influence the HTML that an application ultimately builds.
+
+Like JSX, Handlebars uses curly braces to inject the value of a variable. Handlebars uses a double-pair of curly braces, instead of a single pair.
+
+Given this Handlebars template:
+
+html Copy
+
+```
+<header>
+  <h1>Hello, {{subject}}!</h1>
+</header>
+
+```
+
+And this data:
+
+json Copy
+
+```
+{
+  "subject": "World"
+}
+
+```
+
+Handlebars will build HTML like this:
+
+html Copy
+
+```
+<header>
+  <h1>Hello, World!</h1>
+</header>
+
+```
+
+### [TypeScript](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FLearn%5Fweb%5Fdevelopment%2FCore%2FFrameworks%5Flibraries%2FMain%5Ffeatures%23typescript)
+
+[TypeScript](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fwww.typescriptlang.org%2F) is a *superset* of JavaScript, meaning it extends JavaScript — all JavaScript code is valid TypeScript, but not the other way around. TypeScript is useful for the strictness it allows developers to enforce on their code. For instance, consider a function `add()` , which takes integers `a` and `b` and returns their sum.
+
+In JavaScript, that function could be written like this:
+
+js Copy
+
+```
+function add(a, b) {
+  return a + b;
+}
+
+```
+
+This code might be trivial for someone accustomed to JavaScript, but it could still be clearer. JavaScript lets us use the `+` operator to concatenate strings together, so this function would technically still work if `a` and `b` were strings — it just might not give you the result you'd expect. What if we wanted to only allow numbers to be passed into this function? TypeScript makes that possible:
+
+ts Copy
+
+```
+function add(a: number, b: number) {
+  return a + b;
+}
+
+```
+
+The `: number` written after each parameter here tells TypeScript that both `a` and `b` must be numbers. If we were to use this function and pass `'2'` into it as an argument, TypeScript would raise an error during compilation, and we would be forced to fix our mistake. We could write our own JavaScript that raises these errors for us, but it would make our source code significantly more verbose. It probably makes more sense to let TypeScript handle such checks for us.
+
+## [Writing components](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FLearn%5Fweb%5Fdevelopment%2FCore%2FFrameworks%5Flibraries%2FMain%5Ffeatures%23writing%5Fcomponents)
+
+As mentioned in the previous lesson, most frameworks have some kind of component model. React components can be written with JSX, Ember components with Handlebars, and Angular and Vue components with a templating syntax that lightly extends HTML.
+
+Regardless of their opinions on how components should be written, each framework's components offer a way to describe the external properties they may need, the internal state that the component should manage, and the events a user can trigger on the component's markup.
+
+The code snippets in the rest of this section will use React as an example, and are written with JSX.
+
+### [Properties](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FLearn%5Fweb%5Fdevelopment%2FCore%2FFrameworks%5Flibraries%2FMain%5Ffeatures%23properties)
+
+Properties, or **props**, are external data that a component needs in order to render. Suppose you're building a website for an online magazine, and you need to be sure that each contributing writer gets credit for their work. You might create an `AuthorCredit` component to go with each article. This component needs to display a portrait of the author and a short byline about them. In order to know what image to render, and what byline to print, `AuthorCredit` needs to accept some props.
+
+A React representation of this `AuthorCredit` component might look something like this:
+
+jsx Copy
+
+```
+function AuthorCredit(props) {
+  return (
+    <figure>
+      
+      <figcaption>{props.byline}</figcaption>
+    </figure>
+  );
+}
+
+```
+
+`{props.src}` , `{props.alt}` , and `{props.byline}` represent where our props will be inserted into the component. To render this component, we would write code like this in the place where we want it rendered (which will probably be inside another component):
+
+jsx Copy
+
+```
+</h1></header>

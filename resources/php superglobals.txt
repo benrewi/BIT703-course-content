@@ -1,0 +1,72 @@
+# Superglobals
+
+Superglobals — Built-in variables that are always available in all scopes
+
+### Description [¶](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fwww.php.net%2Fmanual%2Fen%2Flanguage.variables.superglobals.php%23refsect1-language.variables.superglobals-description)
+
+Several predefined variables in PHP are "superglobals", which means they are available in all scopes throughout a script. There is no need to do **global $variable;** to access them within functions or methods.
+
+These superglobal variables are:
+
+* `[$GLOBALS](https://www.php.net/manual/en/reserved.variables.globals.php)`
+* `[$_SERVER](https://www.php.net/manual/en/reserved.variables.server.php)`
+* `[$_GET](https://www.php.net/manual/en/reserved.variables.get.php)`
+* `[$_POST](https://www.php.net/manual/en/reserved.variables.post.php)`
+* `[$_FILES](https://www.php.net/manual/en/reserved.variables.files.php)`
+* `[$_COOKIE](https://www.php.net/manual/en/reserved.variables.cookies.php)`
+* `[$_SESSION](https://www.php.net/manual/en/reserved.variables.session.php)`
+* `[$_REQUEST](https://www.php.net/manual/en/reserved.variables.request.php)`
+* `[$_ENV](https://www.php.net/manual/en/reserved.variables.environment.php)`
+
+### Notes [¶](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fwww.php.net%2Fmanual%2Fen%2Flanguage.variables.superglobals.php%23refsect1-language.variables.superglobals-notes)
+
+**Note**: **Variable availability**
+
+By default, all of the superglobals are available but there are directives that affect this availability. For further information, refer to the documentation for [variables\_order](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fwww.php.net%2Fmanual%2Fen%2Fini.core.php%23ini.variables-order).
+
+**Note**: **Variable variables**
+
+Superglobals cannot be used as [variable variables](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fwww.php.net%2Fmanual%2Fen%2Flanguage.variables.variable.php) inside functions or class methods.
+
+### See Also [¶](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fwww.php.net%2Fmanual%2Fen%2Flanguage.variables.superglobals.php%23refsect1-language.variables.superglobals-seealso)
+
+* [variable scope](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fwww.php.net%2Fmanual%2Fen%2Flanguage.variables.scope.php)
+* The [variables\_order](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fwww.php.net%2Fmanual%2Fen%2Fini.core.php%23ini.variables-order) directive
+* [The filter extension](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fwww.php.net%2Fmanual%2Fen%2Fbook.filter.php)
+
+### Found A Problem?
+
+[Learn How To Improve This Page](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fgithub.com%2Fphp%2Fdoc-base%2Fblob%2Fmaster%2FREADME.md)
+
+• [Submit a Pull Request](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fgithub.com%2Fphp%2Fdoc-en%2Fblob%2Fmaster%2Flanguage%2Fpredefined%2Fvariables%2Fsuperglobals.xml)
+
+• [Report a Bug](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fgithub.com%2Fphp%2Fdoc-en%2Fissues%2Fnew%3Fbody%3DFrom%2520manual%2520page%3A%2520https%3A%252F%252Fphp.net%252Flanguage.variables.superglobals%250A%250A---)
+
+[＋add a note](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fwww.php.net%2Fmanual%2Fadd-note.php%3Fsect%3Dlanguage.variables.superglobals%26repo%3Den%26redirect%3Dhttps%3A%2F%2Fwww.php.net%2Fmanual%2Fen%2Flanguage.variables.superglobals.php)
+
+### User Contributed Notes 1 note
+
+[up](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fwww.php.net%2Fmanual%2Fvote-note.php%3Fid%3D112184%26page%3Dlanguage.variables.superglobals%26vote%3Dup)
+
+[down](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fwww.php.net%2Fmanual%2Fvote-note.php%3Fid%3D112184%26page%3Dlanguage.variables.superglobals%26vote%3Ddown)
+
+10
+
+[kitchin](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fwww.php.net%2Fmanual%2Fen%2Flanguage.variables.superglobals.php%23112184) [¶](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fwww.php.net%2Fmanual%2Fen%2Flanguage.variables.superglobals.php%23112184)
+
+**13 years ago**
+
+```
+Since PHP 5.4, you cannot use a superglobal as the parameter to a function. This causes a fatal error:
+
+function foo($_GET) {
+  // whatever
+}
+
+It's called "shadowing" a superglobal, and I don't know why people ever did it, but I've seen it out there. The easy fix is just to rename the variable $get in the function, assuming that name is unique. 
+
+There was no deprecation warning issued in previous versions of PHP, according to my testing, neither in 5.3 nor 5.2. The error messages in 5.4 are:
+Fatal error: Cannot re-assign auto-global variable _GET in...
+Fatal error: Cannot re-assign auto-global variable _COOKIE in...
+etc.
+```

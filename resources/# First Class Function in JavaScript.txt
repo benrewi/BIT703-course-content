@@ -1,0 +1,404 @@
+JavaScript treats functions as first-class citizens, meaning they can be used just like any other value in the language. This capability makes JavaScript flexible, expressive, and powerful for modern web development.
+
+* Functions can be assigned to variables and stored in data structures.
+* Functions can be passed as arguments and returned from other functions.
+* Functions enable callbacks, closures, and functional programming patterns.
+
+## First-Class Functions
+
+A function is considered first-class when the programming language allows it to be:
+
+* Assigned to a variable
+* Passed as an argument to another function
+* Returned from another function
+* Stored inside arrays or objects
+
+JavaScript supports all of these features, making functions extremely powerful.
+
+## Assigning Functions to Variables
+
+Functions can be stored in variables just like numbers or strings.
+
+JavaScript
+
+Loading Playground... \`
+
+```
+const greet = function () {
+  return "Hello!";
+};
+
+console.log(greet());
+
+```
+
+\`
+
+```
+const greet = function () {
+
+```
+
+```
+  return "Hello!";
+
+```
+
+```
+};
+
+```
+
+```
+​
+
+```
+
+```
+console.log(greet());
+
+```
+
+```
+
+```
+
+* The function is assigned to the variable greet instead of being executed immediately.
+* The function is invoked later using parentheses, just like a normal function.
+
+## Passing Functions as Arguments
+
+Functions can be passed to other functions as parameters. Such functions are commonly known as callback functions.
+
+JavaScript
+
+Loading Playground... \`
+
+```
+function sayHello() {
+  console.log("Hello!");
+}
+
+function execute(fn) {
+  fn();
+}
+
+execute(sayHello);
+
+```
+
+\`
+
+```
+function sayHello() {
+
+```
+
+```
+  console.log("Hello!");
+
+```
+
+```
+}
+
+```
+
+```
+​
+
+```
+
+```
+function execute(fn) {
+
+```
+
+```
+  fn();
+
+```
+
+```
+}
+
+```
+
+```
+​
+
+```
+
+```
+execute(sayHello);
+
+```
+
+```
+
+```
+
+* The function sayHello is passed as an argument to another function.
+* The receiving function executes the passed function when needed.
+
+## Returning Functions from Other Functions
+
+JavaScript allows one function to return another function. This behavior is the foundation of closures.
+
+JavaScript
+
+Loading Playground... \`
+
+```
+function multiplier(factor) {
+  return function (number) {
+    return number * factor;
+  };
+}
+
+const double = multiplier(2);
+console.log(double(5));
+
+```
+
+\`
+
+```
+function multiplier(factor) {
+
+```
+
+```
+  return function (number) {
+
+```
+
+```
+    return number * factor;
+
+```
+
+```
+  };
+
+```
+
+```
+}
+
+```
+
+```
+​
+
+```
+
+```
+const double = multiplier(2);
+
+```
+
+```
+console.log(double(5));
+
+```
+
+```
+
+```
+
+* The outer function returns a new function instead of a value.
+* The returned function remembers the factor variable through closure.
+
+## Usage of **First-Class Function**
+
+* It can be stored as a value in a variable.
+* It can be returned by another function.
+* It can be passed into another function as an Argument.
+* It can also stored in an array, queue, or stack.
+* Also, It can have its own methods and property.
+
+**[Example 1]:** Let us take an example to understand more about the first-class function.
+
+JavaScript
+
+Loading Playground... \`
+
+```
+const Arithmetics = {
+    add: (a, b) =&gt; {
+        return `${a} + ${b} = ${a + b}`;
+    },
+    subtract: (a, b) =&gt; {
+        return `${a} - ${b} = ${a - b}`
+    },
+    multiply: (a, b) =&gt; {
+        return `${a} * ${b} = ${a * b}`
+    },
+    division: (a, b) =&gt; {
+        if (b != 0) return `${a} / ${b} = ${a / b}`;
+        return `Cannot Divide by Zero!!!`;
+    }
+
+}
+
+console.log(Arithmetics.add(100, 100));
+console.log(Arithmetics.subtract(100, 7))
+console.log(Arithmetics.multiply(5, 5))
+console.log(Arithmetics.division(100, 5));
+
+```
+
+\`
+
+```
+const Arithmetics = {
+
+```
+
+```
+    add: (a, b) =&gt; {
+
+```
+
+```
+        return `${a} + ${b} = ${a + b}`;
+
+```
+
+```
+    },
+
+```
+
+```
+    subtract: (a, b) =&gt; {
+
+```
+
+```
+        return `${a} - ${b} = ${a - b}`
+
+```
+
+```
+    },
+
+```
+
+```
+    multiply: (a, b) =&gt; {
+
+```
+
+```
+        return `${a} * ${b} = ${a * b}`
+
+```
+
+```
+    },
+
+```
+
+```
+    division: (a, b) =&gt; {
+
+```
+
+```
+        if (b != 0) return `${a} / ${b} = ${a / b}`;
+
+```
+
+```
+        return `Cannot Divide by Zero!!!`;
+
+```
+
+```
+    }
+
+```
+
+```
+​
+
+```
+
+```
+}
+
+```
+
+```
+​
+
+```
+
+```
+console.log(Arithmetics.add(100, 100));
+
+```
+
+```
+console.log(Arithmetics.subtract(100, 7))
+
+```
+
+```
+console.log(Arithmetics.multiply(5, 5))
+
+```
+
+```
+console.log(Arithmetics.division(100, 5));
+
+```
+
+```
+
+```
+
+**Note:** In the above example, functions are stored as a variable in an object.
+
+**[Example 2]:** This example shows more about the first-class function.
+
+JavaScript
+
+Loading Playground... \`
+
+```
+const Geek = (a, b) =&gt; {
+    return (a + " " + b);
+}
+
+console.log(Geek("Akshit", "Saxena"));
+
+```
+
+\`
+
+```
+const Geek = (a, b) =&gt; {
+
+```
+
+```
+    return (a + " " + b);
+
+```
+
+```
+}
+
+```
+
+```
+​
+
+```
+
+```
+console.log(Geek("Akshit", "Saxena"));
+```

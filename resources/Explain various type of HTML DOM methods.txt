@@ -1,0 +1,291 @@
+There are some instances in which the HTML markup needs to be \*\* dynamically manipulated\*\* without actually changing the HTML source code. To achieve this, users can make use of a variety of HTML DOM methods present in **JavaScript** at their disposal. First, it is important to understand what the HTML **Document Object Model (DOM)** is. In simple words, it can be categorized as a **programming interface** for **HTML** as well as **XML** (eXtensible\*\*\*\* **Markup** **Language**) documents. It defines the **logical structure** of the documents in the form of a tree of objects where each HTML element is represented as a node and it also describes the way these documents can be manipulated as mentioned earlier.
+
+Now coming to the HTML DOM methods, there are **six** different methods in which users can access or manipulate HTML elements using JavaScript:
+
+* [HTML DOM getElementById() Method](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fwww.geeksforgeeks.org%2Fhtml%2Fhtml-dom-getelementbyid-method%2F)
+* [HTML DOM getElementsByClassName() Method](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fwww.geeksforgeeks.org%2Fjavascript%2Fhtml-dom-getelementsbyclassname-method%2F)
+* [HTML DOM getElementsByName() Method](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fwww.geeksforgeeks.org%2Fjavascript%2Fhtml-dom-getelementsbyname-method%2F)
+* [HTML DOM getElementsByTagName() Method](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fwww.geeksforgeeks.org%2Fhtml%2Fhtml-dom-getelementsbytagname-method%2F)
+* [HTML DOM querySelector() Method](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fwww.geeksforgeeks.org%2Fhtml%2Fhtml-dom-queryselector-method%2F)
+* [HTML DOM querySelectorAll() Method](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fwww.geeksforgeeks.org%2Fhtml%2Fhtml-dom-queryselectorall-method%2F)
+
+These methods are illustrated with some sample code snippets below:
+
+**HTML DOM getElementById():** This method is used when developers have defined certain HTML elements with **IDs** that uniquely identify the same elements in the whole document. It returns an **Element object** which matches the specified ID in the method. If the ID does not exist in the document, it simply returns **null**.
+
+**Syntax:**
+
+```
+document.getElementById(id);
+
+```
+
+**Parameter:** It has a single parameter as mentioned above and described below:
+
+* **id:** The ID of the element to locate in the HTML document. It should be a case-sensitive string.
+
+**Return value:** It returns the object corresponding to the passed ID in the method, or **null** if no match is found.
+
+**Example:** The following example clearly demonstrates the use of the **getElementById()** method.
+
+HTML
+
+Loading Playground... \`
+
+```
+
+    <h2>GFG</h2>
+
+    
+    <p>Geeks</p>
+
+    
+
+```
+
+\`
+
+```
+
+```
+
+```
+
+```
+
+```
+​
+
+```
+
+```
+
+```
+
+```
+    <h2>GFG</h2>
+
+```
+
+```
+​
+
+```
+
+```
+    
+
+```
+
+```
+    <p>Geeks</p>
+
+```
+
+```
+​
+
+```
+
+```
+    
+
+```
+
+```
+
+```
+
+```
+​
+
+```
+
+```
+
+```
+
+```
+
+```
+
+**Output:** 
+
+**HTML DOM getElementsByClassName():** This method is used when there are multiple HTML elements with the same class name. It returns a \*\* collection\*\* of all objects which match the specified class in the method.
+
+**Syntax:**
+
+```
+document.getElementsByClassName(className);
+
+```
+
+**Parameter:** It has a single parameter as mentioned above and described below:
+
+* **className**: The class name of the element(s) to locate in the HTML document. It should be a case-sensitive string.
+
+**Return value:** It returns a collection of objects corresponding to the passed class name in the method.
+
+**Example**: The following example clearly demonstrates the use of the **getElementByClassName()** method. Since this method returns a collection of objects, individual objects can also be selected by indexing (range of 0 - (length of collection-1))
+
+HTML
+
+Loading Playground... \`
+
+```
+
+    <h2>GFG</h2>
+
+    
+    <div>Geeks</div>
+    <div>For</div>
+    <div>Geeks</div>
+
+    <h2>GFG</h2>
+
+    <div>Geeks</div>
+
+
+    <div>For</div>
+
+
+    <div>Geeks</div>
+
+
+
+**Output:** 
+
+**HTML DOM getElementsByName()**: In Javascript, **getElementsByName()** returns a **NodeList** of objects which match a particular **name** attribute in the HTML document.
+
+**Syntax:**
+
+```
+document.getElementsByName(nameAttribute);
+
+```
+
+**Parameter:** It has a single parameter as mentioned above and described below:
+
+* **nameAttribute:** The name attribute of the element(s) to locate in the HTML document. It should be a case-sensitive string.
+
+**Return value:** It returns a **NodeList** of objects corresponding to the passed **name attribute** in the method.
+
+**Example:** The following example clearly demonstrates the use of the **getElementByName()** method. Since this method returns a NodeList of objects, individual objects can also be selected by indexing (range of 0 - (length of NodeList-1)) (same as getElementsByClassName).
+
+HTML
+
+Loading Playground... \`
+
+```
+
+    <h2>GFG</h2>
+
+    
+    <h2>GFG</h2>
+**Output:** 
+
+**HTML DOM getElementsByTagName()**: The getElementsByTagName() returns a **HTMLCollection** of objects which match a **tag name** in the HTML document.
+
+**Syntax:**
+
+```
+document.getElementsByTagName(tagName);
+
+```
+
+**Parameter:** It has a single parameter as mentioned above and described below:
+
+* **tagName:** The tag name of the element(s) to locate in the HTML document. It should be a case-sensitive string.
+
+**Return value:** It returns an **HTMLCollection** of objects corresponding to the passed tag name in the method.
+
+**Example:** The following example clearly demonstrates the use of the **getElementByTagName()** method. Since this method returns an HTMLCollection of objects, individual objects can also be selected by indexing (range of 0 - (length of HTMLCollection-1))
+
+HTML
+
+Loading Playground... \`
+
+```
+
+    
+    <div>GFG</div>
+    <p>Geeks</p>
+    <p>For</p>
+    <p>Geeks</p>
+
+    <div>GFG</div>
+    <p>Geeks</p>
+    <p>For</p>
+    <p>Geeks</p>
+
+**Output:** 
+
+**HTML DOM querySelector():** This method returns the **first match** of an element that is found within the HTML document with the specific selector. If there is no match **, null** is returned.
+
+**Syntax:**
+
+```
+document.querySelector(selector);
+
+```
+
+**Parameter:** It has a single parameter as mentioned above and described below:
+
+* **selector:** A string containing one or more selectors to match elements located in the HTML document.
+
+**Return value:** It returns the first occurrence of the object corresponding to the passed selector in the method.
+
+**Example:** The following example clearly demonstrates the use of the **querySelector()** method.
+
+HTML
+
+Loading Playground... \`
+
+```
+
+    
+    <div>GFG</div>
+    <p>Geeks</p>
+    <p>For</p>
+    <p>Geeks</p>
+    <div>GFG</div>
+    <p>Geeks</p>
+    <p>For</p>
+    <p>Geeks</p>
+**Output:** 
+
+**HTML DOM querySelectorAll():** This method returns a static **NodeList** of all elements that are found within the HTML document with the specific selector.
+
+**Syntax:**
+
+```
+document.querySelectorAll(selector);
+
+```
+
+**Parameter:** It has a single parameter as mentioned above and described below:
+
+* **selector:** A string containing one or more selectors to match elements located in the HTML document.
+
+**Return value:** It returns a **NodeList** of the objects corresponding to the passed selector in the method.
+
+**Example:** The following example clearly demonstrates the use of the **querySelectorAll()** method.
+
+HTML
+
+Loading Playground... \`
+
+```
+
+    
+    <div>GFG</div>
+    <div>G</div>
+    <div>F</div>
+    <div>G</div>
+    <p>Geeks</p>
+    <div>GFG</div>
+    <div>G</div>
+    <div>F</div>
+    <div>G</div>
+
+    <p>Geeks</p>

@@ -1,0 +1,87 @@
+# AJAX full form
+
+Last Updated : 15 Jul, 2025
+
+[AJAX](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fwww.geeksforgeeks.org%2Fjavascript%2Fajax-introduction%2F) is an abbreviation for \*\* Asynchronous JavaScript and XML\*\*. AJAX is a technique not a programming language which is used by the developers to make the websites behaving like desktop applications. It operates on the client-side for creating asynchronous web applications. AJAX is a group of technologies that uses number of web technologies for creating a set of web development techniques.
+
+AJAX allows multiple web pages to be updated one by one by exchanging the data with the web server in the background. Which means that the part of the web pages can be updated without refreshing the whole page again and again.
+
+Let's take an example of **facebook** page, in **facebook** news feed when we press the like, love, etc button or comment on any picture then it will simply like, loves the picture without reloading the whole page. Whereas sometime before, when we hit the like button it will reload the whole pages. This change is made because of AJAX i.e. AJAX allows the part of the web pages to be updated without disturbing the whole page.
+
+AJAX uses the mixture of both the following :
+
+* **XMLHttpRequest Object:** To request data from a web server, ajax uses a built-in **XMLHttpRequest** Object.
+* **JavaScript and HTML DOM:** To display or to use the data, ajax uses [JavaScript](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fwww.geeksforgeeks.org%2Fjavascript%2Fjavascript-tutorial%2F) and [HTML DOM](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fwww.geeksforgeeks.org%2Fhtml%2Fhtml-dom-html-object%2F).
+
+**Technologies involved in AJAX are:**
+
+* **HTML -** It is used at the client side.
+* **JavaScript -** It is used to make the request.
+* **CSS -** It is also used at the client side.
+* **XML -** It is just a request formats.
+* **JSON -** It is also a request formats.
+* **php -** It is used at the server side.
+
+**History of Ajax:**
+
+* **Early 1990's :** In this time period most websites were based on complete HTML pages. Whenever any changes were made then these changes have to be made complete by reloading the page though changes were few but all content had to be reloaded which made bandwidth a limiting factor.
+* **1996 :** The [iframe tag](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fwww.geeksforgeeks.org%2Fhtml%2Fhtml-iframes%2F) was introduced by IE; like the object element, it can load or fetch content asynchronously.
+* **1998 :** The Microsoft outlook web access team developed the concept behind the **XMLHttpRequest** scripting object.
+* **2000 :** The utility of background **HTTP requests** and asynchronous web technologies remained fairly obscure until it started appearing in large scale online applications such as Outlook Web Access.
+* **2004 &amp; 2005 :** Google made a wide deployment of standards - compliant, cross browser AJAX with Gmail in 2004 and Google Maps in 2005.
+* **18th February 2005 :** The term AJAX was publicly used on 18 February 2005 by *Jesse James Garrette* in an article titled
+
+**AJAX:** A new approach to Web applications, based on techniques used on Google pages.
+
+**Characteristics of Ajax:**
+
+* **In AJAX web page acts as application:** AJAX is much more important than smarter than HTML since they acts as desktop application. AJAX interact with back end server without any hassles and they are more responsive than HTML.
+* **Data is stored on server unlike pages:** In HTML when the user sends a dynamic data to the server, the server converts the whole HTML page into the format which is readable by client. In AJAX there is no need of doing the above process because the AJAX server does not have to convert all the pages, it directly receives and sends the data to the client-side. In AJAX server deals with data and not in pages.
+* **Provides continuous and dynamic user experience:** User can interact with page and data can be stored at the same time without refreshing the page. In other cases, we have to wait for the response to be processed and to get results but in the case of AJAX, we get a synchronous response. We can perform multiple task with AJAX since it provides nonlinear workflows.
+
+**Ajax structure:**
+
+JavaScript
+
+Loading Playground... \`
+
+```
+function geeksforgeeks(str) 
+{
+  var gfg=new XMLHttpRequest();
+  gfg.open("get","url?name_you_want_to_Send="+str,true);
+  gfg.send();
+  gfg.onreadystatechange=function gfg1() 
+  {
+     // if true means reaponse is arrived
+     if(gfg.readyState==4 &amp;&amp; gfg.status==200)          
+     {
+            document.getElementById("name").innerHTML=
+            gfg.responseText;
+     }
+  }
+}
+
+```
+
+\`
+
+```
+
+```
+
+**Advantages of Ajax :**
+
+* Response time of AJAX is high henceforth it increases speed and performance.
+* AJAX supports a lot of browsers.
+* Some of the complex AJAX applications gives feeling that we are using it on Desktop.
+* There is lesser requirement of time between server and client.
+* AJAX allows multiple tasks to be performed at same time.
+
+**Disadvantages of Ajax :**
+
+* We face browser compatibility issues in AJAX.
+* If JavaScript is disabled by user then those users cannot use AJAX as AJAX needs JavaScript to be enabled.
+* Various search engine like Google can't index AJAX pages.
+* We cannot bookmark AJAX updated page content.
+* Since data is downloadable from client side henceforth AJAX is less secure.

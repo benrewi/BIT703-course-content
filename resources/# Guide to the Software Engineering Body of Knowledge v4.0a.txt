@@ -1,0 +1,1437 @@
+**CHAPTER 01 Software Requirements 1-1** 
+
+Introduction 1-1 1\. Software Requirements Fundamentals 1-2 
+
+1.1\. Definition of a Software Requirement 1-2 1.2\. Categories of Software Requirements 1-3 1.3\. Software Product Requirements and Software 
+
+Project Requirements 1-3 1.4\. Functional Requirements 1-4 1.5\. Nonfunctional Requirements 1-4 1.6\. Technology Constraints 1-4 1.7\. Quality of Service Constraints 1-4 1.8\. Why Categorize Requirements This Way? 1-5 1.9\. System Requirements and Software Requirements 1-5 1.10\. Derived Requirements 1-6 1.11\. Software Requirements Activities 1-6 
+
+2\. Requirements Elicitation 1-6 2.1\. Requirements Sources 1-6 2.2\. Common Requirements Elicitation Techniques 1-7 
+
+3\. Requirements Analysis 1-8 3.1\. Basic Requirements Analysis 1-8 3.2\. Economics of Quality of Service Constraints 1-8 3.3\. Formal Analysis 1-9
+
+*vi SWEBOK ® GUIDE V4.0a* 
+
+3.4\. Addressing Conflict in Requirements 1-10 4\. Requirements Specification 1-10 
+
+4.1\. Unstructured Natural Language Requirements Specification 1-11 4.2\. Structured Natural Language Requirements Specification 1-12 4.3\. Acceptance Criteria-Based Requirements Specification 1-12 4.4\. Model-Based Requirements Specification 1-14 4.5\. Additional Attributes of Requirement 1-14 4.6\. Incremental and Comprehensive Requirements Specification 1-15 
+
+5\. Requirements Validation 1-15 5.1\. Requirements Reviews 1-15 5.2\. Simulation and Execution 1-16 5.3\. Prototyping 1-16 
+
+6\. Requirements Management Activities 1-16 6.1\. Requirements Scrubbing 1-16 6.2\. Requirements Change Control 1-17 6.3\. Scope Matching 1-17 
+
+7\. Practical Considerations 1-17 7.1\. Iterative Nature of the Requirements Process 1-17 7.2\. Requirements Prioritization 1-17 7.3\. Requirements Tracing 1-18 7.4\. Requirements Stability and Volatility 1-19 7.5\. Measuring Requirements 1-19 7.6\. Requirements Process Quality and Improvement 1-19 
+
+8\. Software Requirements Tools 1-20 8.1\. Requirements Management Tools 1-20 8.2\. Requirements Modeling Tools 1-20 8.3\. Functional Test Case Generation Tools 1-20 
+
+Matrix of Topics vs. Reference Material 1-21 Further Readings 1-22 References 1-23 
+
+**CHAPTER 02 Software Architecture 2-1** 
+
+Introduction 2-1 1\. Software Architecture Fundamentals 2-1 
+
+1.1\. The Senses of “Architecture” 2-1 1.2\. Stakeholders and Concerns 2-3 1.3\. Uses of Architecture 2-4 
+
+2\. Software Architecture Description 2-4 2.1\. Architecture Views and Viewpoints 2-5 2.2\. Architecture Patterns, Styles and Reference Architectures 2-6 2.3\. Architecture Description Languages and Architecture Frameworks 2-7 2.4\. Architecture as Significant Decisions 2-7 
+
+3\. Software Architecture Process 2-8 3.1\. Architecture in Context 2-8 
+
+3.1.1\. Relation of Architecture to Design 2-9
+
+TABLE OF CONTENTS vii 
+
+3.2\. Architectural Design 2-9 3.2.1\. Architecture Analysis 2-9 3.2.2\. Architecture Synthesis 2-9 3.2.3\. Architecture Evaluation 2-10 
+
+3.3\. Architecture Practices, Methods, and Tactics 2-10 3.4\. Architecting in the Large 2-10 
+
+4\. Software Architecture Evaluation 2-10 4.1\. Goodness in Architecture 2-10 4.2\. Reasoning about Architectures 2-11 4.3\. Architecture Reviews 2-11 4.4\. Architecture Metrics 2-11 
+
+Matrix of Topics vs. Reference Material 2-12 Further Readings 2-13 References 2-14 
+
+**CHAPTER 03 Software Design 3-1** 
+
+Introduction 3-1 1\. Software Design Fundamentals 3-2 
+
+1.1\. Design Thinking 3-2 1.2\. Context of Software Design 3-2 1.3\. Key Issues in Software Design 3-3 1.4\. Software Design Principles 3-3 
+
+2\. Software Design Processes 3-5 2.1\. High-Level Design 3-6 2.2\. Detailed Design 3-6 
+
+3\. Software Design Qualities 3-6 3.1\. Concurrency 3-6 3.2\. Control and Event Handling 3-6 3.3\. Data Persistence 3-7 3.4\. Distribution of Components 3-7 3.5\. Errors and Exception Handling, Fault Tolerance 3-7 3.6\. Integration and Interoperability 3-7 3.7\. Assurance, Security, and Safety 3-7 3.8\. Variability 3-7 
+
+4\. Recording Software Designs 3-7 4.1\. Model-Based Design 3-8 4.2\. Structural Design Descriptions 3-9 4.3\. Behavioral Design Descriptions 3-9 4.4\. Design Patterns and Styles 3-10 4.5\. Specialized and Domain-Specific Languages 3-10 4.6\. Design Rationale 3-11 
+
+5\. Software Design Strategies and Methods 3-11 5.1\. General Strategies 3-11 5.2\. Function-Oriented (or Structured) Design 3-11 5.3\. Data-Centered Design 3-11
+
+*viii SWEBOK ® GUIDE V4.0a* 
+
+5.4\. Object-Oriented Design 3-11 5.5\. User-Centered Design 3-12 5.6\. Component-Based Design (CBD) 3-12 5.7\. Event-Driven Design 3-12 5.8\. Aspect-Oriented Design (AOD) 3-12 5.9\. Constraint-Based Design 3-12 5.10\. Domain-Driven Design 3-13 5.11\. Other Methods 3-13 
+
+6\. Software Design Quality Analysis and Evaluation 3-13 6.1\. Design Reviews and Audits 3-13 6.2\. Quality Attributes 3-13 6.3\. Quality Analysis and Evaluation Techniques 3-13 6.4\. Measures and Metrics 3-14 6.5\. Verification, Validation, and Certification 3-14 
+
+Matrix of Topics vs. Reference Material 3-14 Further Readings 3-15 References 3-16 
+
+**CHAPTER 04 Software Construction 4-1** 
+
+Introduction 4-1 1\. Software Construction Fundamentals 4-2 
+
+1.1\. Minimizing Complexity 4-2 1.2\. Anticipating and Embracing Change 4-2 1.3\. Constructing for Verification 4-4 1.4\. Reusing Assets 4-4 1.5\. Applying Standards in Construction 4-4 
+
+2\. Managing Construction 4-4 2.1\. Construction in Life Cycle Models 4-4 2.2\. Construction Planning 4-5 2.3\. Construction Measurement 4-5 2.4\. Managing Dependencies 4-5 
+
+3\. Practical Considerations 4-6 3.1\. Construction Design 4-6 3.2\. Construction Languages 4-6 3.3\. Coding 4-7 3.4\. Construction Testing 4-7 3.5\. Reuse in Construction 4-8 3.6\. Construction Quality 4-8 3.7\. Integration 4-9 3.8\. Cross-Platform Development and Migration 4-9 
+
+4\. Construction Technologies 4-10 4.1\. API Design and Use 4-10 4.2\. Object-Oriented Runtime Issues 4-10 4.3\. Parameterization, Templates, and Generics 4-10 4.4\. Assertions, Design by Contract, and Defensive Programming 4-10 4.5\. Error Handling, Exception Handling, and Fault Tolerance 4-11
+
+TABLE OF CONTENTS ix 
+
+4.6\. Executable Models 4-11 4.7\. State-Based and Table-Driven Construction Techniques 4-11 4.8\. Runtime Configuration and Internationalization 4-12 4.9\. Grammar-Based Input Processing 4-12 4.10\. Concurrency Primitives 4-12 4.11\. Middleware 4-12 4.12\. Construction Methods for Distributed and Cloud-Based Software 4-13 4.13\. Constructing Heterogeneous Systems 4-13 4.14\. Performance Analysis and Tuning 4-13 4.15\. Platform Standards 4-13 4.16\. Test-First Programming 4-14 4.17\. Feedback Loop for Construction 4-14 
+
+5\. Software Construction Tools 4-14 5.1\. Development Environments 4-14 5.2\. Visual Programming and Low-Code/Zero-Code Platforms 4-14 5.3\. Unit Testing Tools 4-15 5.4\. Profiling, Performance Analysis, and Slicing Tools 4-15 
+
+Matrix of Topics vs. Reference Material 4-15 Further Readings 4-18 References 4-18 
+
+**CHAPTER 05 Software Testing 5-1** 
+
+Introduction 5-1 1\. Software Testing Fundamentals 5-3 
+
+1.1\. Faults vs. Failures 5-3 1.2\. Key Issues 5-4 
+
+1.2.1\. Test Case Creation 5-4 1.2.2\. Test Selection and Adequacy Criteria 5-4 1.2.3\. Prioritization/Minimization 5-4 1.2.4\. Purpose of Testing 5-4 1.2.5\. Assessment and Certification 5-4 1.2.6\. Testing for Quality Assurance/Improvement 5-4 1.2.7\. The Oracle Problem 5-4 1.2.8\. Theoretical and Practical Limitations 5-5 1.2.9\. The Problem of Infeasible Paths 5-5 1.2.10\. Testability 5-5 1.2.11\. Test Execution and Automation 5-5 1.2.12\. Scalability 5-5 1.2.13\. Test Effectiveness 5-5 1.2.14\. Controllability, Replication, and Generalization 5-5 1.2.15\. Off-Line vs. Online Testing 5-6 
+
+1.3\. Relationship of Testing to Other Activities 5-6 2\. Test Levels 5-6 
+
+2.1\. The Target of the Test 5-6 2.1.1\. Unit Testing 5-6 2.1.2\. Integration Testing 5-7
+
+*x SWEBOK ® GUIDE V4.0a* 
+
+2.1.3\. System Testing 5-7 2.1.4\. Acceptance Testing 5-7 
+
+2.2\. Objectives of Testing 5-7 2.2.1\. Conformance Testing 5-7 2.2.2\. Compliance Testing 5-8 2.2.3\. Installation Testing 5-8 2.2.4\. Alpha and Beta Testing 5-8 2.2.5\. Regression Testing 5-8 2.2.6\. Prioritization Testing 5-8 2.2.7\. Non-functional Testing 5-8 2.2.8\. Security Testing 5-9 2.2.9\. Privacy Testing 5-9 2.2.10\. Interface and Application Program Interface (API) Testing 5-10 2.2.11\. Configuration Testing 5-10 2.2.12\. Usability and Human-Computer Interaction Testing 5-10 
+
+3\. Test Techniques 5-10 3.1\. Specification-Based Techniques 5-10 
+
+3.1.1\. Equivalence Partitioning 5-10 3.1.2\. Boundary-Value Analysis 5-11 3.1.3\. Syntax Testing 5-11 3.1.4\. Combinatorial Test Techniques 5-11 3.1.5\. Decision Table 5-11 3.1.6\. Cause-Effect Graphing 5-11 3.1.7\. State Transition Testing 5-11 3.1.8\. Scenario-Based Testing 5-12 3.1.9\. Random Testing 5-12 3.1.10\. Evidence-Based 5-12 3.1.11\. Forcing Exception 5-12 
+
+3.2\. Structure-Based Test Techniques 5-12 3.2.1\. Control Flow Testing 5-13 3.2.2\. Data Flow Testing 5-13 3.2.3\. Reference Models for Structure-Based Test Techniques 5-13 
+
+3.3\. Experience-Based Techniques 5-13 3.3.1\. Error Guessing 5-13 3.3.2\. Exploratory Testing 5-13 3.3.3\. Further Experience-Based Techniques 5-14 
+
+3.4\. Fault-Based and Mutation Techniques 5-14 3.5\. Usage-Based Techniques 5-15 
+
+3.5.1\. Operational Profile 5-15 3.5.2\. User Observation Heuristics 5-15 
+
+3.6\. Techniques Based on the Nature of the Application 5-15 3.7\. Selecting and Combining Techniques 5-16 
+
+3.7.1\. Combining Functional and Structural 5-16 3.7.2\. Deterministic vs. Random 5-16 
+
+3.8\. Techniques Based on Derived Knowledge 5-16 4\. Test-Related Measures 5-16 
+
+4.1\. Evaluation of the SUT 5-17 4.1.1\. SUT Measurements that Aid in Planning and Designing Tests 5-17
+
+TABLE OF CONTENTS xi 
+
+4.1.2\. Fault Types, Classification and Statistics 5-17 4.1.3\. Fault Density 5-17 4.1.4\. Life Test, Reliability Evaluation 5-17 4.1.5\. Reliability Growth Models 5-17 
+
+4.2\. Evaluation of the Tests Performed 5-17 4.2.1\. Fault Injection 5-18 4.2.2\. Mutation Score 5-18 4.2.3\. Comparison and Relative Effectiveness of Different Techniques 5-18 
+
+5\. Test Process 5-18 5.1\. Practical Considerations 5-18 
+
+5.1.1\. Attitudes/Egoless Programming 5-19 5.1.2\. Test Guides and Organizational Process 5-19 5.1.3\. Test Management and Dynamic Test Processes 5-19 5.1.4\. Test Documentation 5-19 5.1.5\. Test Team 5-19 5.1.6\. Test Process Measures 5-20 5.1.7\. Test Monitoring and Control 5-20 5.1.8\. Test Completion 5-20 5.1.9\. Test Reusability 5-20 
+
+5.2\. Test Sub-Processes and Activities 5-21 5.2.1\. Test Planning Process 5-21 5.2.2\. Test Design and Implementation 5-21 5.2.3\. Test Environment Set-up and Maintenance 5-21 5.2.4\. Controlled Experiments and Test Execution 5-21 5.2.5\. Test Incident Reporting 5-22 
+
+5.3\. Staffing 5-22 6\. Software Testing in the Development Processes and the Application Domains 5-22 
+
+6.1\. Testing Inside Software Development Processes 5-23 6.1.1\. Testing in Traditional Processes 5-23 6.1.2\. Testing in Line with Shift-Left Movement 5-23 
+
+6.2\. Testing in the Application Domains 5-24 7\. Testing of and Testing Through Emerging Technologies 5-26 
+
+7.1\. Testing of Emerging Technologies 5-26 7.2\. Testing Through Emerging Technologies 5-27 
+
+8\. Software Testing Tools 5-28 8.1\. Testing Tool Support and Selection 5-29 8.2\. Categories of Tools 5-29 
+
+Matrix of Topics vs. Reference Material 5-30 References 5-33 
+
+**CHAPTER 06 Software Engineering Operations 6-1** 
+
+Introduction 6-1 1\. Software Engineering Operations Fundamentals 6-3 
+
+1.1\. Definition of Software Engineering Operations 6-3 1.2\. Software Engineering Operations Processes 6-4
+
+*xii SWEBOK ® GUIDE V4.0a* 
+
+1.3\. Software Installation 6-5 1.4\. Scripting and Automating 6-5 1.5\. Effective Testing and Troubleshooting 6-5 1.6\. Performance, Reliability and Load Balancing 6-6 
+
+2\. Software Engineering Operations Planning 6-6 2.1\. Operations Plan and Supplier Management 6-6 
+
+2.1.1\. Operations Plan 6-6 2.1.2\. Supplier Management 6-7 
+
+2.2\. Development and Operational Environments 6-7 2.3\. Software Availability, Continuity, and Service Levels 6-8 2.4\. Software Capacity Management 6-8 2.5\. Software Backup, Disaster Recovery, and Failover 6-8 2.6\. Software and Data Safety, Security, Integrity, Protection, and Controls 6-9 
+
+3\. Software Engineering Operations Delivery 6-9 3.1\. Operational Testing, Verification, and Acceptance 6-9 3.2\. Deployment/Release Engineering 6-10 3.3\. Rollback and Data Migration 6-10 3.4\. Problem Resolution 6-11 
+
+4\. Software Engineering Operations Control 6-11 4.1\. Incident Management 6-11 4.2\. Change Management 6-11 4.3\. Monitor, Measure, Track, and Review 6-11 4.4\. Operations Support 6-12 4.5\. Service Reporting 6-12 
+
+5\. Practical Considerations 6-12 5.1\. Incident and Problem Prevention 6-12 5.2\. Operational Risk Management 6-12 5.3\. Automating Software Engineering Operations 6-12 5.4\. Software Engineering Operations for Small Organizations 6-13 
+
+6\. Software Engineering Operations Tools 6-13 6.1\. Containers and Virtualization 6-13 6.2\. Deployment 6-13 6.3\. Automated Test 6-14 6.4\. Monitoring and Telemetry 6-14 
+
+Matrix of Topics vs. Reference Material 6-14 References 6-15 
+
+**CHAPTER 07 Software Maintenance 7-1** 
+
+Introduction 7-1 1\. Software Maintenance Fundamentals 7-2 
+
+1.1\. Definitions and Terminology 7-2 1.2\. Nature of Software Maintenance 7-2 1.3\. Need for Software Maintenance 7-3 1.4\. Majority of Maintenance Costs 7-3 1.5\. Evolution of Software 7-3
+
+TABLE OF CONTENTS xiii 
+
+1.6\. Categories of Software Maintenance 7-4 2\. Key Issues in Software Maintenance 7-5 
+
+2.1\. Technical Issues 7-5 2.1.1 Limited Understanding 7-5 2.1.2 Testing 7-5 2.1.3 Impact Analysis 7-6 2.1.4 Maintainability 7-6 
+
+2.2\. Management Issues 7-7 2.2.1\. Alignment with Organizational Objectives 7-7 2.2.2\. Staffing 7-7 2.2.3\. Process 7-8 2.2.4\. Supplier Management 7-8 2.2.5\. Organizational Aspects of Maintenance 7-8 
+
+2.3\. Software Maintenance Costs 7-9 2.3.1\. Technical Debt Cost Estimation 7-9 2.3.2\. Maintenance Cost Estimation 7-9 
+
+2.4\. Software Maintenance Measurement 7-10 3\. Software Maintenance Processes 7-11 
+
+3.1\. Software Maintenance Processes 7-11 3.2\. Software Maintenance Activities and Tasks 7-11 
+
+3.2.1\. Supporting and Monitoring Activities 7-12 3.2.2\. Planning Activities 7-12 3.2.3\. Configuration Management 7-13 3.2.4\. Software Quality 7-13 
+
+4\. Software Maintenance Techniques 7-13 4.1\. Program Comprehension 7-13 4.2\. Software Reengineering 7-13 4.3\. Reverse Engineering 7-14 4.4\. Continuous Integration, Delivery, Testing, and Deployment 7-14 4.5\. Visualizing Maintenance 7-15 
+
+5\. Software Maintenance Tools 7-15 Matrix of Topics vs. Reference Material 7-16 Further Readings 7-17 References 7-17 
+
+**CHAPTER 08 Software Configuration Management 8-1** 
+
+Introduction 8-1 1\. Management of the SCM Process 8-2 
+
+1.1\. Organizational Context for SCM 8-2 1.2\. Constraints and Guidance for the SCM Process 8-3 1.3\. Planning for SCM 8-3 
+
+1.3.1\. SCM Organization and Responsibilities 8-4 1.3.2\. SCM Resources and Schedules 8-4 1.3.3\. Tool Selection and Implementation 8-4 1.3.4\. Vendor/Subcontractor Control 8-5
+
+*xiv SWEBOK ® GUIDE V4.0a* 
+
+1.3.5\. Interface Control 8-5 1.4\. SCM Plan 8-5 1.5\. Monitoring of Software Configuration Management 8-5 
+
+1.5.1 SCM Measures and Measurement 8-6 1.5.2 In-Process Audits of SCM 8-6 
+
+2\. Software Configuration Identification 8-6 2.1\. Identifying Items to Be Controlled 8-6 
+
+2.1.1 Software Configuration 8-6 2.1.2 Software Configuration Item 8-6 
+
+2.2\. Configuration Item Identifiers and Attributes 8-7 2.3\. Baseline Identification 8-7 2.4\. Baseline Attributes 8-7 2.5\. Relationships Scheme Definition 8-7 2.6\. Software Libraries 8-8 
+
+3\. Software Configuration Change Control 8-9 3.1\. Requesting, Evaluating, and Approving Software Changes 8-9 
+
+3.1.1 Software Configuration Control Board 8-10 3.1.2 Software Change Request Process 8-10 3.1.3 Software Change Request Forms Definition 8-10 
+
+3.2\. Implementing Software Changes 8-10 3.3\. Deviations and Waivers 8-11 
+
+4\. Software Configuration Status Accounting 8-11 4.1\. Software Configuration Status Information 8-11 4.2\. Software Configuration Status Reporting 8-11 
+
+5\. Software Configuration Auditing 8-12 5.1\. Software Functional Configuration Audit 8-12 5.2\. Software Physical Configuration Audit 8-12 5.3\. In-Process Audits of a Software Baseline 8-12 
+
+6\. Software Release Management and Delivery 8-13 6.1\. Software Building 8-13 6.2\. Software Release Management 8-13 
+
+7\. Software Configuration Management Tools 8-14 Matrix of Topics vs. Reference Material 8-15 Further Readings 8-16 References 8-17 
+
+**CHAPTER 09 Software Engineering Management 9-1** 
+
+Introduction 9-1 1\. Initiation and Scope Definition 9-6 
+
+1.1\. Determination and Negotiation of Requirements 9-6 1.2\. Feasibility Analysis 9-6 1.3\. Process for the Review and Revision of Requirements 9-7 
+
+2\. Software Project Planning 9-7 2.1\. Process Planning 9-8 2.2\. Determine Deliverables 9-8
+
+TABLE OF CONTENTS xv 
+
+2.3\. Effort, Schedule, and Cost Estimation 9-8 2.4\. Resource Allocation 9-9 2.5\. Risk Management 9-9 2.6\. Quality Management 9-9 2.7\. Plan Management 9-10 
+
+3\. Software Project Execution 9-11 3.1\. Implementation of Plans 9-11 3.2\. Software Acquisition and Supplier Contract Management 9-11 3.3\. Implementation of Measurement Process 9-12 3.4\. Monitor Process 9-12 3.5\. Control Process 9-12 3.6\. Reporting 9-13 
+
+4\. Software Review and Evaluation 9-13 4.1\. Determining Satisfaction of Requirements 9-13 4.2\. Reviewing and Evaluating Performance 9-13 
+
+5\. Closure 9-13 5.1\. Determining Closure 9-13 5.2\. Closure Activities 9-14 
+
+6\. Software Engineering Measurement 9-14 6.1\. Establish and Sustain Measurement Commitment 9-14 6.2\. Plan the Measurement Process 9-15 6.3\. Perform the Measurement Process 9-15 6.4\. Evaluate Measurement 9-16 
+
+7\. Software Engineering Management Tools 9-16 Matrix of Topics vs. Reference Material 9-17 Further Readings 9-18 References 9-18 
+
+**CHAPTER 10 Software Engineering Process 10-1** 
+
+Introduction 10-1 1\. Software Engineering Process Fundamentals 10-1 
+
+1.1\. Introduction 10-1 1.2\. Software Engineering Process Definition 10-3 
+
+2\. Life Cycles 10-3 2.1\. Life Cycle Definition, Process Categories, and Terminology 10-3 2.2\. Rationale for Life Cycles 10-4 2.3\. The Concepts of Process Models and Life Cycle Models 10-5 2.4\. Some Paradigms for Development Life Cycle Models 10-5 2.5\. Development Life Cycle Models and Their Engineering Dimension 10-6 2.6\. The Management of SLCPs 10-7 2.7\. Software Engineering Process Management 10-8 2.8\. Software Life Cycle Adaptation 10-8 2.9\. Practical Considerations 10-8 2.10\. Software Process Infrastructure, Tools, Methods 10-9 2.11\. Software Engineering Process Monitoring and 
+
+*xvi SWEBOK ® GUIDE V4.0a* 
+
+its Relationship with the Software Product 10-9 3\. Software Process Assessment and Improvement 10-9 
+
+3.1\. Overview of Software Process Assessment and Improvement 10-9 3.2\. Goal-Question-Metric (GQM) 10-10 3.3\. Framework-Based Methods 10-10 3.4\. Process Assessment and Improvement in Agile 10-10 
+
+Matrix of Topics vs. Reference Material 10-10 References 10-11 
+
+**CHAPTER 11 Software Engineering Models and Methods 11-1** 
+
+Introduction 11-1 1\. Modeling 11-1 
+
+1.1\. Modeling Principles 11-2 1.2\. Properties and Expression of Models 11-3 1.3\. Syntax, Semantics, and Pragmatics 11-3 1.4\. Preconditions, Postconditions, and Invariants 11-4 
+
+2\. Types of Models 11-4 2.1\. Structural Modeling 11-5 2.2\. Behavioral Modeling 11-5 
+
+3\. Analysis of Models 11-5 3.1\. Analyzing for Completeness 11-6 3.2\. Analyzing for Consistency 11-6 3.3\. Analyzing for Correctness 11-6 3.4\. Analyzing for Traceability 11.6 3.5\. Analyzing for Interaction 11-6 
+
+4\. Software Engineering Methods 11-7 4.1\. Heuristic Methods 11-7 4.2\. Formal Methods 11-8 4.3\. Prototyping Methods 11-9 4.4\. Agile Methods 11-9 
+
+Matrix of Topics vs. Reference Material 11-11 References 11-12 
+
+**CHAPTER 12 Software Quality 12-1** 
+
+Introduction 12-1 1\. Software Quality Fundamentals 12-3 
+
+1.1\. Software Engineering Culture and Ethics 12-3 1.2\. Value and Costs of Quality 12-4 1.3\. Standards, Models, and Certifications 12-4 1.4\. Software Dependability and Integrity Levels 12-5 
+
+1.4.1 Dependability 12-5 1.4.2\. Integrity Levels of Software 12-6
+
+TABLE OF CONTENTS xvii 
+
+2\. Software Quality Management Process 12-6 2.1\. Software Quality Improvement 12-7 2.2\. Plan Quality Management 12-7 2.3\. Evaluate Quality Management 12-8 
+
+2.3.1 Software Quality Measurement 12-8 2.4\. Perform Corrective and Preventive Actions 12-9 
+
+2.4.1\. Defect Characterization 12-9 3\. Software Quality Assurance Process 12-9 
+
+3.1\. Prepare for Quality Assurance 12-9 3.2\. Perform Process Assurance 12-10 3.3\. Perform Product Assurance 12-11 3.4\. V&amp;V and Testing 12-12 
+
+3.4.1 Static Analysis Techniques 12-12 3.4.2\. Dynamic Analysis Techniques 12-13 3.4.3\. Formal Analysis Techniques 12-13 3.4.4\. Software Quality Control and Testing 12-13 3.4.5\. Technical Reviews and Audits 12-13 
+
+4\. Software Quality Tools 12-14 Matrix of Topics vs. Reference Material 12-15 Further Readings 12-16 References 12-17 
+
+**CHAPTER 13 Software Security 13-1** 
+
+Introduction 13-1 1\. Software Security Fundamentals 13-1 
+
+1.1\. Software Security 13-1 1.2\. Information Security 13-1 1.3\. Cybersecurity 13-2 
+
+2\. Security Management and Organization 13-2 2.1\. Capability Maturity Model 13-2 2.2\. Information Security Management System 13-2 2.3\. Agile Practice for Software Security 13-3 
+
+3\. Software Security Engineering and Processes 13-3 3.1\. Security Engineering and Secure Development Life Cycle (SDLC) 13-3 3.2\. Common Criteria for Information Technology Security Evaluation 13-3 
+
+4\. Security Engineering for Software Systems 13-3 4.1\. Security Requirements 13-3 4.2\. Security Design 13-4 4.3\. Security Patterns 13-4 4.4\. Construction for Security 13-4 4.5\. Security Testing 13-5 4.6\. Vulnerability Management 13-5 
+
+5\. Software Security Tools 13-5 5.1\. Security Vulnerability Checking Tools 13-5 5.2\. Penetration Testing Tools 13-6
+
+*xviii SWEBOK ® GUIDE V4.0a* 
+
+6\. Domain-Specific Software Security 13-6 6.1\. Security for Container and Cloud 13-6 6.2\. Security for IoT Software 13-6 6.3\. Security for Machine Learning-Based Application 13-6 
+
+Matrix of Topics vs. Reference Material 13-7 Further Readings 13-7 References 13-8 
+
+**CHAPTER 14 Software Engineering Professional Practice 14-1** 
+
+Introduction 14-1 1\. Professionalism 14-2 
+
+1.1\. Accreditation, Certification and Qualification, and Licensing 14-2 1.1.1\. Accreditation 14-2 1.1.2\. Certification and Qualification 14-3 1.1.3\. Licensing 14-3 
+
+1.2\. Codes of Ethics and Professional Conduct 14-3 1.3\. Nature and Role of Professional Societies 14-4 1.4\. Nature and Role of Software Engineering Standards 14-4 1.5\. Economic Impact of Software 14-5 1.6\. Employment Contracts 14-5 1.7\. Legal Issues 14-6 
+
+1.7.1\. Standards 14-6 1.7.2\. Trademarks 14-6 1.7.3\. Patents 14-6 1.7.4\. Copyrights 14-6 1.7.5\. Trade Secrets 14-6 1.7.6\. Professional Liability 14-7 1.7.7\. Legal Requirements 14-7 1.7.8\. Trade Compliance 14-7 1.7.9\. Cybercrime 14-7 1.7.10\. Data Privacy 14-8 
+
+1.8\. Documentation 14-8 1.9\. Trade-Off Analysis 14-9 
+
+2\. Group Dynamics and Psychology 14-9 2.1\. Dynamics of Working in Teams/Groups 14-9 2.2\. Individual Cognition 14-10 2.3\. Dealing with Problem Complexity 14-10 2.4\. Interacting with Stakeholders 14-10 2.5\. Dealing with Uncertainty and Ambiguity 14-11 2.6\. Dealing with Equity, Diversity, and Inclusivity 14-11 
+
+3\. Communication Skills 14-11 3.1\. Reading, Understanding, and Summarizing 14-12 3.2\. Writing 14-12 3.3\. Team and Group Communication 14-12 3.4\. Presentation Skills 14-12
+
+TABLE OF CONTENTS xix 
+
+Matrix of Topics vs. Reference Material 14-13 Further Readings 14-14 References 14-14 
+
+**CHAPTER 15 Software Engineering Economics 15-1** 
+
+Introduction 15-1 1\. Software Engineering Economics Fundamentals 15-3 
+
+1.1\. Proposals 15-3 1.2\. Cash Flow 15-3 1.3\. Time-Value of Money 15-3 1.4\. Equivalence 15-4 1.5\. Bases for Comparison 15-4 1.6\. Alternatives 15-4 1.7\. Intangible Assets 15-4 1.8\. Business Model 15-5 
+
+2\. The Engineering Decision-Making Process 15-5 2.1\. Process Overview 15-5 2.2\. Understand the Real Problem 15-5 2.3\. Identify All Reasonable Technically Feasible Solutions 15-6 2.4\. Define the Selection Criteria 15-6 2.5\. Evaluate Each Alternative Against the Selection Criteria 15-6 2.6\. Select the Preferred Alternative 15-6 2.7\. Monitor the Performance of the Selected Alternative 15-7 
+
+3\. For-Profit Decision-Making 15-7 3.1\. Minimum Acceptable Rate of Return 15-7 3.2\. Economic Life 15-7 3.3\. Planning Horizon 15-8 3.4\. Replacement Decisions 15-8 3.5\. Retirement Decisions 15-9 3.6\. Advanced For-Profit Decision Considerations 15-9 
+
+4\. Nonprofit Decision-Making 15-9 4.1\. Benefit-Cost Analysis 15-9 4.2\. Cost-Effectiveness Analysis 15-9 
+
+5\. Present Economy Decision-Making 15-9 5.1\. Break-Even Analysis 15-9 5.2\. Optimization Analysis 15-9 
+
+6\. Multiple-Attribute Decision-Making 15-10 6.1\. Compensatory Techniques 15-10 6.2\. Non-Compensatory Techniques 15-10 
+
+7\. Identifying and Characterizing Intangible Assets 15-10 7.1\. Identify Processes and Define Business Goals 15-10 7.2\. Identify Intangible Assets Linked with Business Goal 15-11 7.3\. Identify Software Products That Support Intangible Assets 15-11 7.4\. Define and Measure Indicators 15-11 7.5\. Intangible Asset Characterization 15-11
+
+*xx SWEBOK ® GUIDE V4.0a* 
+
+7.6\. Link Specific Intangible Assets with the Business Model 15-13 7.7\. Decision-Making 15-13 
+
+8\. Estimation 15-13 8.1\. Expert Judgment 15-14 8.2\. Analogy 15-15 8.3\. Decomposition 15-15 8.4\. Parametric 15-15 8.5\. Multiple Estimates 15-15 
+
+9\. Practical Considerations 15-16 9.1\. Business Case 15-16 9.2\. Multiple-Currency Analysis 15-16 9.3\. Systems Thinking 15-16 
+
+10\. Related Concepts 15-16 10.1\. Accounting 15-16 10.2\. Cost and Costing 15-16 10.3\. Finance 15-17 10.4\. Controlling 15-17 10.5\. Efficiency and Effectiveness 15-17 10.6\. Productivity 15-18 10.7\. Product or Service 15-18 10.8\. Project 15-18 10.9\. Program 15-18 10.10\. Portfolio 15-18 10.11\. Product Life Cycle 15-19 10.12\. Project Life Cycle 15-19 10.13\. Price and Pricing 15-19 10.14\. Prioritization 15-19 
+
+Matrix of Topics vs. Reference Material 15-20 Further Readings 15-22 References 15-22 
+
+**CHAPTER 16 Computing Foundations 16-1** 
+
+Introduction 16-2 1\. Basic Concepts of a System or Solution 16-2 2\. Computer Architecture and Organization 16-3 
+
+2.1\. Computer Architecture 16-3 2.2\. Types of Computer Architectures 16-3 
+
+2.2.1\. Von Neumann Architecture 16-3 2.2.2\. Harvard Architecture 16-4 2.2.3\. Instruction Set Architecture 16-4 2.2.4\. Flynn’s Architecture or Taxonomy 16-5 2.2.5\. System Architecture 16-5 
+
+2.3\. Microarchitecture or Computer Organization 16-5 2.3.1\. Arithmetic Logic Unit 16-5 2.3.2\. Memory Unit 16-6
+
+TABLE OF CONTENTS xxi 
+
+2.3.3\. Input/Output Devices 16-6 2.3.4\. Control Unit 16-6 
+
+3\. Data Structures and Algorithms 16-6 3.1\. Types of Data Structures 16-6 3.2\. Operations on Data Structures 16-7 3.3\. Algorithms and Attributes of Algorithms 16-7 3.4\. Algorithm Complexity 16-8 3.5\. Measurement of Complexity 16-8 3.6\. Designing Algorithms 16-8 3.7\. Sorting Techniques 16-9 3.8\. Searching Techniques 16-10 3.9\. Hashing 16-10 
+
+4\. Programming Fundamentals and Languages 16-10 4.1\. Programming Language Types 16-10 4.2\. Programming Syntax, Semantics, Type Systems 16-11 4.3\. Subprograms and Coroutines 16-11 4.4\. Object-Oriented Programming 16-12 4.5\. Distributed Programming and Parallel Programming 16-13 4.6\. Debugging 16-13 4.7\. Standards and Guidelines 16-13 
+
+5\. Operating Systems 16-15 5.1\. Processor Management 16-15 5.2\. Memory Management 16-16 5.3\. Device Management 16-16 5.4\. Information Management 16-16 5.5\. Network Management 16-16 
+
+6\. Database Management 16-17 6.1\. Schema 16-17 6.2\. Data Models and Storage Models 16-17 6.3\. Database Management Systems 16-18 6.4\. Relational Database Management Systems and Normalization 16-18 6.5\. Structured Query Language 16-19 6.6\. Data Mining and Data Warehousing 16-19 6.7\. Database Backup and Recovery 16-20 
+
+7\. Computer Networks and Communications 16-20 7.1\. Types of Computer Networks 16-20 7.2\. Layered Architectures of Networks 16-21 7.3\. Open Systems Interconnection Model 16-21 7.4\. Encapsulation and Decapsulation 16-22 7.5\. Application Layer Protocols 16-22 7.6\. Design Techniques for Reliable and Efficient Network 16-22 7.7\. Internet Protocol Suite 16-23 7.8\. Wireless and Mobile Networks 16-23 7.9\. Security and Vulnerabilities 16-23 
+
+8\. User and Developer Human Factors 16-24 8.1\. User Human Factors 16-24 8.2\. Developer Human Factors 16-24 
+
+9\. Artificial Intelligence and Machine Learning 16-25
+
+*xxii SWEBOK ® GUIDE V4.0a* 
+
+9.1\. Reasoning 16-25 9.2\. Learning 16-26 9.3\. Models 16-26 9.4\. Perception and Problem-Solving 16-27 9.5\. Natural Language Processing 16-27 9.6\. AI and Software Engineering 16-27 
+
+Matrix of Topics vs. Reference Material 16-28 References 16-32 
+
+**CHAPTER 17 Mathematical Foundations 17-1** 
+
+Introduction 17-1 1\. Basic Logic 17-1 
+
+1.1\. Propositional Logic 17-1 1.2\. Predicate Logic 17-3 
+
+2\. Proof Techniques 17-3 2.1\. Direct Proof 17-4 2.2\. Proof by Contradiction 17-4 2.3\. Proof by Induction 17-4 2.4\. Proof by Example 17-5 
+
+3\. Set, Relation, Function 17-5 3.1\. Set Operations 17-6 3.2\. Properties of Sets 17-6 3.3\. Relation and Function 17-7 
+
+4\. Graph and Tree 17-8 4.1\. Graph 17-8 4.2\. Tree 17-10 
+
+5\. Finite-State Machine 17-12 6\. Grammar 17-13 
+
+6.1\. Language Recognition 17-14 7\. Number Theory 17-14 
+
+7.1\. Types of Numbers 17-15 7.2\. Divisibility 17-15 7.3\. Prime Number 17-15 7.4\. Greatest Common Divisor 17-16 
+
+8\. Basics of Counting 17-16 9\. Discrete Probability 17-17 10\. Numerical Precision, Accuracy, and Error 17-18 11\. Algebraic Structures 17-19 
+
+11.1\. Group 17-19 11.2\. Ring 17-20 
+
+12\. Engineering Calculus 17-21 13\. New Advancements 17-21 
+
+13.1\. Computational Neurosciences 17-21 13.2\. Genomics 17-21 
+
+Matrix of Topics vs. Reference Material 17-22 References 17-22
+
+TABLE OF CONTENTS xxiii 
+
+**CHAPTER 18 Engineering Foundations 18-1** 
+
+Introduction 18-1 1\. The Engineering Process 18-1 2\. Engineering Design 18-2 
+
+2.1\. Engineering Design in Engineering Education 18-2 2.2\. Design as a Problem-Solving Activity 18-3 
+
+3\. Abstraction and Encapsulation 18-3 3.1\. Levels of Abstraction 18-4 3.2\. Encapsulation 18-4 3.3\. Hierarchy 18-4 3.4\. Alternate Abstractions 18-4 
+
+4\. Empirical Methods and Experimental Techniques 18-4 4.1\. Designed Experiment 18-5 4.2\. Observational Study 18-5 4.3\. Retrospective Study 18-5 
+
+5\. Statistical Analysis 18-5 5.1\. Unit of Analysis (Sampling Units), Population, and Sample 18-5 5.2\. Correlation and Regression 18-8 
+
+6\. Modeling, Simulation, and Prototyping 18-8 6.1\. Modeling 18-8 6.2\. Simulation 18-9 6.3\. Prototyping 18-9 
+
+7\. Measurement 18-10 7.1\. Levels (Scales) of Measurement 18-10 7.2\. Implications of Measurement Theory for Programming Languages 18-12 7.3\. Direct and Derived Measures 18-13 7.4\. Reliability and Validity 18-14 7.5\. Assessing Reliability 18-14 7.6\. Goal-Question-Metric Paradigm: Why Measure? 18-15 
+
+8\. Standards 18-15 9\. Root Cause Analysis 18-16 
+
+9.1\. Root Cause Analysis Techniques 18-16 9.2\. Root Cause–Based Improvement 18-17 
+
+10\. Industry 4.0 and Software Engineering 18-17 Matrix of Topics vs. Reference Material 18-18 Further Readings 18-19 References 18-20 
+
+**APPENDIX A Knowledge Area Description Specifications A-1** 
+
+Introduction A-1 The Swebok Guide is a Foundational Document for the IEEE Computer Society Suite of Software Engineering Products A-1 Baseline and Change Control A-1
+
+*xxiv SWEBOK ® GUIDE V4.0a* 
+
+Criteria and Requirements for the Breakdown of Topics Within a Knowledge Area A-2 Criteria and Requirements for Describing Topics A-2 Criteria and Requirements for Reference Material A-2 Common Structure A-4 What Do We Mean by “Generally Recognized Knowledge”? A-4 Length of KA Description A-5 Important Related Documents A-5 Other Detailed Guidelines A-6 Editing A-6 Release of Copyright A-6 References A-6 
+
+**APPENDIX B IEEE and ISO/IEC Standards Supporting the Software Engineering Body of Knowledge (SWEBOK) B-1** 
+
+1\. Overview B-1 1.1\. The SWEBOK and standards B-1 1.2\. Types of Standards B-2 1.3\. Sources of Software Engineering Standards B-2 
+
+2\. The software engineering standards landscape B-3 3\. Life cycle process standards B-4 4\. Extensions and specialized applications of ISO/IEC/IEEE 12207 B-5 
+
+4.1\. Explanations of concepts and several processes B-5 4.2\. More specialized extensions B-8 4.3\. SoS standards B-9 
+
+5\. Single Process Standards B-9 6\. Standards for product line, methods, and tools B-9 7\. Process assessment standards B-10 8\. Professional Skills and Knowledge Standards B-11 9\. Selected Software Engineering Standards B-11 
+
+**APPENDIX C Consolidated Reference List C-1** 
+
+Consolidated Reference List C-1
+
+**FOREWORD** 
+
+*The Guide to the Software Engineering Body of Knowledge (SWEBOK Guide), published by the* IEEE Computer Society (IEEE CS), represents the current state of generally accepted, con-sensus-based knowledge emanating from the interplay between software engineering theory and practice. Its objectives include the provision of guidance for learners, researchers, and practitioners to identify and share a common understanding of “generally accepted knowledge” in software engineering, defining the boundary between software engineering and related disciplines, and providing a foundation for certifications and educational curricula. 
+
+The origins of the Guide go back to the early 2000s. Much like the software engineering discipline, the Guide has continued to evolve over the last 20 years to reflect society’s industrial, educational, social, technical, and technological changes. Publication of the 2014 version of the *Guide (SWEBOK Guide V3) was a significant milestone in establishing software engineering as* a recognized engineering discipline. 
+
+*The goal of developing this update (SWEBOK Guide V4) to the Guide is to improve the* Guide’s currency, readability, consistency, and usability. The Guide consists of 18 knowledge areas (KAs) followed by several appendixes. A KA is an identified area of software engineering defined by its knowledge requirements and described in terms of its component processes, practices, inputs, outputs, tools, and techniques. Three appendixes provide, respectively, the specifications for the KA descriptions, an annotated set of relevant standards for each KA, and a list *of references cited in the Guide.* 
+
+All KAs have been updated to reflect changes in software engineering since the publication *of Guide V3, including modern development practices, new techniques, and the advancement* of standards. One significant change is that Agile and DevOps have been incorporated into almost all KAs because these models have been widely accepted since the previous publication *of the Guide. Agile models typically involve frequent demonstrations of working software to* a customer in short, iterative cycles. Agile practices exist across KAs. Furthermore, emerging platforms and technologies, including artificial intelligence (AI), machine learning (ML), and the internet of things (IoT), have been incorporated into the foundation KAs. 
+
+To reflect areas that are becoming particularly important in modern software engineering, the following KAs have been added: the Software Architecture KA, Software Security KA, and Software Engineering Operations KA. 
+
+*This Guide, written under the auspices of the Professional and Educational Activities Board* of the IEEE Computer Society, represents the next step in the evolution of the software engineering profession. 
+
+**Steve McConnell** *Chief Executive Officer, Construx Software* 
+
+**Hironori Washizaki** *President-Elect 2024, President 2025, IEEE Computer Society* 
+
+ xxv
+
+*xxvi SWEBOK ® GUIDE V4.0a* 
+
+**FOREWORD TO THE 2014 EDITION** 
+
+Every profession is based on a body of knowledge, although that knowledge is not always defined in a concise manner. In cases where no formality exists, the body of knowledge is “generally recognized” by practitioners and may be codified in a variety of ways for a variety of different uses. But in many cases, a guide to a body of knowledge is formally documented, usually in a form that permits it to be used for such purposes as development and accreditation of academic and training programs, certification of specialists, or professional licensing. Generally, a professional society or similar body maintains stewardship of the formal definition of a body of knowledge. 
+
+During the past forty-five years, software engineering has evolved from a conference catchphrase into an engineering profession, characterized by 1) a professional society, 2) standards that specify generally accepted professional practices, 3) a code of ethics, 4) conference proceedings, 5) textbooks, 6) curriculum guidelines and curricula, 7) accreditation criteria and accred-*ited degree programs, 8) certification and licensing, and 9) this Guide to the Body of Knowledge.* 
+
+*In this Guide to the Software Engineering Body of Knowledge, the IEEE Computer Society* presents a revised and updated version of the body of knowledge formerly documented as *SWEBOK 2004; this revised and updated version is denoted SWEBOK Guide V3\. This work is* in partial fulfillment of the Society’s responsibility to promote the advancement of both theory and practice for the profession of software engineering. 
+
+*It should be noted that this Guide does not present the entire body of knowledge for soft-*ware engineering but rather serves as a guide to the body of knowledge that has been developed over more than four decades. The software engineering body of knowledge is constantly *evolving. Nevertheless, this Guide constitutes a valuable characterization of the software engi-*neering profession. 
+
+In 1958, John Tukey, the world-renowned statistician, coined the term software. The term software engineering was used in the title of a NATO conference held in Germany in 1968\. The IEEE Computer Society first published its Transactions on Software Engineering in 1972, and a committee for developing software engineering standards was established within the IEEE Computer Society in 1976\. 
+
+In 1990, planning was begun for an international standard to provide an overall view of software engineering. The standard was completed in 1995 with designation ISO/IEC 12207 and given the title of Standard for Software Life Cycle Processes. The IEEE version of 12207 was published in 1996 and provided a major foundation for the body of knowledge captured in SWEBOK 2004\. The current version of 12207 is designated as ISO/IEC 12207:2008 and *IEEE 12207-2008; it provides the basis for this SWEBOK Guide V3\.* 
+
+*This Guide to the Software Engineering Body of Knowledge is presented to you, the reader, as a* mechanism for acquiring the knowledge you need in your lifelong career development as a software engineering professional. 
+
+**Dick Fairley, Chair** *Software and Systems Engineering Committee* 
+
+*IEEE Computer Society* 
+
+**Don Shafer, Vice President** *Professional Activities Board IEEE Computer Society*
+
+**FOREWORD TO THE 2004 EDITION** 
+
+*In this Guide, the IEEE Computer Society establishes for the first time a baseline for the body* of knowledge for the field of software engineering, and the work partially fulfills the Society’s responsibility to promote the advancement of both theory and practice in this field. In so doing, the Society has been guided by the experience of disciplines with longer histories but was not bound either by their problems or their solutions. 
+
+*It should be noted that the Guide does not purport to define the body of knowledge but* rather to serve as a compendium and guide to the body of knowledge that has been developing and evolving over the past four decades. Furthermore, this body of knowledge is not static. The *Guide must, necessarily, develop and evolve as software engineering matures. It nevertheless* constitutes a valuable element of the software engineering infrastructure. 
+
+*In 1958, John Tukey, the world-renowned statistician, coined the term software. The term* software engineering was used in the title of a NATO conference held in Germany in 1968\. *The IEEE Computer Society first published its Transactions on Software Engineering in 1972\.* The committee established within the IEEE Computer Society for developing software engineering standards was founded in 1976\. 
+
+The first holistic view of software engineering to emerge from the IEEE Computer Society resulted from an effort led by Fletcher Buckley to develop IEEE standard 730 for software quality assurance, which was completed in 1979\. The purpose of IEEE Std. 730 was to provide uniform, minimum acceptable requirements for preparation and content of software quality assurance plans. This standard was influential in completing the developing standards in the following topics: configuration management, software testing, software requirements, software design, and software verification and validation. 
+
+During the period 1981–1985, the IEEE Computer Society held a series of workshops concerning the application of software engineering standards. These workshops involved practitioners sharing their experiences with existing standards. The workshops also held sessions on planning for future standards, including one involving measures and metrics for software engi-*neering products and processes. The planning also resulted in IEEE Std. 1002, Taxonomy of Software Engineering Standards (1986), which provided a new, holistic view of software engi-*neering. The standard describes the form and content of a software engineering standards taxonomy. It explains the various types of software engineering standards, their functional and external relationships, and the role of various functions participating in the software life cycle. 
+
+In 1990, planning for an international standard with an overall view was begun. The planning focused on reconciling the software process views from IEEE Std. 1074 and the revised US DoD standard 2167A. The revision was eventually published as DoD Std. 498\. The international standard was completed in 1995 with designation, ISO/IEC 12207, and given the title *of Standard for Software Life Cycle Processes. Std. ISO/ IEC 12207 provided a major point of* departure for the body of knowledge captured in this book. 
+
+It was the IEEE Computer Society Board of Governors’ approval of the motion put forward in May 1993 by Fletcher Buckley which resulted in the writing of this book. The Association for Computing Machinery (ACM) Council approved a related motion in August 1993\. The two motions led to a joint committee under the leadership of Mario Barbacci and Stuart Zweben who served as cochairs. The mission statement of the joint committee was “To establish the appropriate set(s) of criteria and norms for professional practice of software engineering upon which industrial decisions, professional certification, and educational curricula can be based.” The steering committee organized task forces in the following areas: 
+
+ xxvii
+
+*xxviii SWEBOK ® GUIDE V4.0a* 
+
+1\. Define Required Body of Knowledge and Recommended Practices. 2\. Define Ethics and Professional Standards. 3\. Define Educational Curricula for undergraduate, graduate, and continuing education. 
+
+This book supplies the first component: required body of knowledge and recommended practices. 
+
+The code of ethics and professional practice for software engineering was completed in 1998 and approved by both the ACM Council and the IEEE Computer Society Board of Governors. It has been adopted by numerous corporations and other organizations and is included in several recent textbooks. 
+
+The educational curriculum for undergraduates is being completed by a joint effort of the IEEE Computer Society and the ACM and is expected to be completed in 2004\. 
+
+Every profession is based on a body of knowledge and recommended practices, although they are not always defined in a precise manner. In many cases, these are formally documented, usually in a form that permits them to be used for such purposes as accreditation of academic programs, development of education and training programs, certification of specialists, or professional licensing. Generally, a professional society or related body maintains custody of such a formal definition. In cases where no such formality exists, the body of knowledge and recommended practices are “generally recognized” by practitioners and may be codified in a variety of ways for different uses. 
+
+It is hoped that readers will find this book useful in guiding them toward the knowledge and resources they need in their lifelong career development as software engineering professionals. 
+
+The book is dedicated to Fletcher Buckley in recognition of his commitment to promoting software engineering as a professional discipline and his excellence as a software engineering practitioner in radar applications. 
+
+**Leonard L. Tripp, IEEE Fellow 2003** *Chair, Professional Practices Committee, IEEE* 
+
+*Computer Society (2001–2003) Chair, Joint IEEE Computer Society and ACM* 
+
+*Steering Committee for the Establishment of Software Engineering as a Profession (1998–1999)* 
+
+*Chair, Software Engineering Standards Committee, IEEE Computer Society (1992–1998)*
+
+**EDITOR** 
+
+*Hironori Washizaki, Waseda University / National Institute of Informatics / eXmotion / University of Human Environments, Japan, washizaki@waseda.jp* 
+
+**KNOWLEDGE AREA EDITORS** 
+
+**Software Requirements** *Steve Tockey, Construx Software, USA.* 
+
+**Software Architecture** *Rich Hilliard, USA.* 
+
+**Software Design** *Rich Hilliard, USA.* 
+
+**Software Construction** *Xin Peng, Software School, Fudan University, China. Steve Schwarm, Synopsys - Black Duck Software, USA.* 
+
+**Software Testing** *Eda Marchetti, ISTI-CNR, Italy. Said Daoudagh, ISTI-CNR, Italy.* 
+
+**Software Engineering Operations** *Francis Bordeleau, École de technologie supérieure (ÉTS), Canada. Alain April, École de technologie supérieure (ÉTS), Canada.* 
+
+**Software Maintenance** *Ali Ouni, École de technologie supérieure (ÉTS), Canada. Alain April, École de technologie supérieure (ÉTS), Canada. Peter Leather, Exceptional Performance, UK.* 
+
+**Software Configuration Management** *Maria Isabel Sánchez Segura, Universidad Carlos III de Madrid, Spain. Bob Aiello, CM Best Practices, USA.* 
+
+**Software Engineering Management** *Kenneth E. Nidiffer, George Mason University, USA.* 
+
+**Software Engineering Process** *Juan Garbajosa, Universidad Politécnica de Madrid, Spain.* 
+
+**Software Engineering Models and Methods** *Hironori Washizaki, Waseda University, Japan. Akinori Ihara, Wakayama University, Japan. Shinpei Ogata, Shinshu University, Japan.* 
+
+ xxix
+
+*xxx SWEBOK ® GUIDE V4.0a* 
+
+**Software Quality** *Alain April, École de technologie supérieure (ÉTS), Canada. Steve Tockey, Construx Software, USA. Steve Schwarm, Synopsys - Black Duck Software, USA.* 
+
+**Software Security** *Nobukazu Yoshioka, Waseda University, Japan. Seiji Munetoh, IBM Research, Japan.* 
+
+**Software Engineering Professional Practice** *Katsuhisa Shintani, Waseda University, Japan. Eiji Hayashiguchi, Waseda University, Japan.* 
+
+**Software Engineering Economics** *Maria Isabel Sánchez Segura, Universidad Carlos III de Madrid, Spain. Steve Tockey, Construx Software, USA.* 
+
+**Computing Foundations** *Yatheendranath TJ, DhiiHii Labs Private Limited, India.* 
+
+**Mathematical Foundations** *Yatheendranath TJ, DhiiHii Labs Private Limited, India. Steve Tockey, Construx Software, USA.* 
+
+**Engineering Foundations** *Yatheendranath TJ, DhiiHii Labs Private Limited, India. Steve Tockey, Construx Software, USA.* 
+
+**Appendix A: Knowledge Area Description Specifications** *Juan Garbajosa, Universidad Politécnica de Madrid, Spain. Hironori Washizaki, Waseda University, Japan.* 
+
+**Appendix B: IEEE and ISO/IEC Standards Supporting SWEBOK** *Annette Reilly, USA.* 
+
+**Appendix C: Consolidated Reference List** *Hironori Washizaki, Waseda University, Japan.* 
+
+**CONTRIBUTING EDITORS** 
+
+*The following persons contributed to editing the SWEBOK Guide V4:* Michelle Phon Eric Berkowitz
+
+**STEERING GROUP** 
+
+*The following experts served on the SWEBOK Guide V4 Steering Group that guided the initial* architecture of the Guide at the beginning of the project: Hironori Washizaki Yatheendranath TJ Rich Hilliard Kenneth Nidiffer Pete Brink 
+
+V.S. Mani Hari Prasad Devarapalli Annette Reilly Narendra S Chowdhury Dharanipragada Janakiram 
+
+Juan Garbajosa Maria Isabel Sánchez Segura Peter Leather Andy Chen Steve Schwarm 
+
+**KNOWLEDGE AREA EDITORS OF PREVIOUS SWEBOK VERSIONS** 
+
+The following persons served as Knowledge Area Editors for either the Trial version published in 2001, the 2004 version, and/or the 2014 version (SWEBOK V3). The affiliations listed are as they belonged to when each person served as a knowledge area editor. 
+
+**Software Requirements** *Peter Sawyer, Computing Department, Lancaster University, UK. Gerald Kotonya, Computing Department, Lancaster University, UK.* 
+
+**Software Design** *Guy Tremblay, Département d’informatique, UQAM, Canada. Yanchun Sun, School of Electronics Engineering and Computer Science, Peking University, China.* 
+
+**Software Construction** *Steve McConnell, Construx Software, USA. Terry Bollinger, the MITRE Corporation, USA. Philippe Gabrini, Département d’informatique, UQAM, Canada. Louis Martin, Département d’informatique, UQAM, Canada. Xin Peng, Software School, Fudan University, China.* 
+
+**Software Testing** *Antonia Bertolino, ISTI-CNR, Italy. Eda Marchetti, ISTI-CNR, Italy.* 
+
+**Software Maintenance** *Thomas M. Pigoski, Techsoft Inc., USA. Alain April, École de technologie supérieure, Canada. Mira Kajko-Mattsson, School of Information and Communication Technology, KTH Royal* 
+
+*Institute of Technology.* 
+
+**Software Configuration Management** *John A. Scott, Lawrence Livermore National Laboratory, USA David Nisse, USA. Roger Champagne, École de technologie supérieure (ÉTS), Canada. Alain April, École de technologie supérieure (ÉTS), Canada.* 
+
+ xxxi
+
+*xxxii SWEBOK ® GUIDE V4.0a* 
+
+**Software Engineering Management** *Dennis Frailey, Raytheon Company, USA. Stephen G. MacDonell, Auckland University of Technology, New Zealand. Andrew R. Gray, University of Otago, New Zealand. James McDonald, Department of Computer Science and Software Engineering, Monmouth* 
+
+*University, USA.* 
+
+**Software Engineering Process** *Khaled El Emam, served while at the Canadian National Research Council, Canada. Annette Reilly, Lockheed Martin Information Systems &amp; Global Solutions, USA. Richard E. Fairley, Software and Systems Engineering Associates (S2EA), USA.* 
+
+**Software Engineering Tools and Methods** *David Carrington, School of Information Technology and Electrical Engineering,* 
+
+*The University of Queensland, Australia. Michael F. Siok, Lockheed Martin Aeronautics Company, USA.* 
+
+**Software Quality** *Alain April, École de technologie supérieure, Canada. Dolores Wallace, retired from the National Institute of Standards and Technology, USA. Larry Reeker, NIST, USA. J. David Blaine, USA. Durba Biswas, Tata Consultancy Services, India.* 
+
+**Software Engineering Professional Practice** *Aura Sheffield, USA. Hengming Zou, Shanghai Jiao Tong University, China.* 
+
+**Software Engineering Economics** *Christof Ebert, Vector Consulting Services, Germany.* 
+
+**Computing Foundations** *Hengming Zou, Shanghai Jiao Tong University, China.* 
+
+**Mathematical Foundations** *Nabendu Chaki, University of Calcutta, India.* 
+
+**Engineering Foundations** *Amitava Bandyopadhayay, Indian Statistical Institute, India . Mary Jane Willshire, Software and Systems Engineering Associates (S2EA), USA.* 
+
+**Appendix B: IEEE and ISO/IEC Standards Supporting SWEBOK** *James W. Moore, USA.* 
+
+**References Editor** *Marc Bouisset, Département d’informatique, UQAM.* 
+
+**REVIEW TEAM** 
+
+*The people listed below participated in the public review process of SWEBOK Guide V4\.* Membership of the IEEE Computer Society was not a requirement to participate in this review process, and membership information was not requested from reviewers. Over 1300 individual comments were collected and duly adjudicated. 
+
+Aakashjit Bhattacharya Adil Aliyev Alaa Mahjoub Alberto Córdoba Izaguirre Ang Boon Chong Antonio Navarro Arjun Remadevi Somanathan Atilla Elci Beatri Beltrán Martínez Biswaranjan Senapati Brandon Thorin Klein Brian Kirkpatrick Carol Woody ChandraSR K Christof Ebert Clive Boughton Dale Dzielski Daniel Medeiros Rocha David Budgen David Mack Endres Dmytro Lenda Duncan Hall Ed Zuk Eka Arriyanti Elena Williams Emmanuelle Wintergerst Ernesto Cuadros-Vargas Fabrício Laguna Fabricio Lantieri Fedor Dzerzhinskiy Fernando Pinciroli Francisco Valdés-Souto Gabriel Tamura Gavin Howard Gopal T V Graham Lee 
+
+Hector Teran Helmut Neukirchen Hernan Guarda Hiroyuki Sato Hossein Saiedian Ian Hirst Irina Marudina Jack McKenzie Jack Pope James C Davis James Purtilo Jason Adcock Javier Gonzalez Huerta Joanna Isabelle Olszewska Joanna Leng Joao Marcelo Borovina Josko Jon D Hagar Jonathan Oliver Joshua Cook Juris Borzovs Kamidi Raja Karol Szkudlarek Kiyoshi Endo Kiyoshi Honda Konstantinos Domdouzis Kun Hsiang Wu Lolita Narag Magesh Kasthuri Maher Ben Abdessalem Manu Mitra Marc Blumberg Marcia Ito Maria-Isabel Sanchez-Segura Martin Kropp Masahiko Ishikawa Matteo Große-Kampmann 
+
+Micheal Tuape Mirna Muñoz Mohammad Samarah Muthu Ramachandran Myneni Madhu Bala Nancy Mead Nandakumar Ramanathan Nauman Ahmad Nenad Medvidović Nicolae Giurescu Norha Villegas Omar Oscar A. Schivo Pankaj Kamthan Paola Britos Peter Schoo Phillip A. Laplante Pieter Botman Piotr Karocki Prashant Verma Qusay F. Hassan Radoslav Rakovic Ravindra Joshi Reddy Gowrigari Ren-Her Hwang Rik Essenius Robert Lemay Rodrigo Martins Pagliares Roland Illig Rupesh Sreeraman Samuel J. Crawford Saurabh Kumar Shailendra Suryawanshi Shelly Sachdeva Sheydi Anel Zamudio López Sravan Kumar Reddy 
+
+ xxxiii
+
+*xxxiv SWEBOK ® GUIDE V4.0a* 
+
+Stefan Malich Stefano Pietroiusti Steffen Becker Steve France Sudheer Kumar Susanne Müller Sushil Birla Syed Mohamed Thameem 
+
+Nizamudeen 
+
+Takehisa Okazaki Tarig Ahmed Khalid Tateki Sano Tetsu Nagata Thomas M. Prinz Tim Bond Trent Leopold Tyler Thomas Procko Vivek Dave 
+
+Vivienne Bičak Walter Green Weihan Goh Weijia Yang William Uemura Yarlagadda Padma Sai Yasuko Okazaki Yuseon Yu Zheng Wang 
+
+**ACKNOWLEDGEMENTS** *Funding for the development of SWEBOK Guide V4 has been provided by the IEEE Computer* Society. The editors appreciate the important work performed by the KA editors and the contributing editors, as well as by the members of the Steering Group. The editorial team also acknowledges the indispensable contribution of reviewers. 
+
+Finally, there are surely other people who have contributed to this Guide, either directly or indirectly, whose names we have inadvertently omitted. To those people, we offer our tacit appreciation and apologize for having omitted explicit recognition. 
+
+**IEEE COMPUTER SOCIETY PRESIDENTS** 
+
+*Leila De Floriani, 2020 President Forrest Shull, 2021 President William “Bill” Gropp, 2022 President Nita Patel, 2023 President Jyotika Athavale, 2024 President Hironori Washizaki, 2025 President* 
+
+**PROFESSIONAL AND EDUCATIONAL ACTIVITIES BOARD, 2024 MEMBERSHIP** 
+
+*Cyril Onwubiko, Chair* Deborah Silver Hironori Washizaki Rajendra Raj Ernesto Cuadros-Vargas 
+
+Sao-Jie Chen Akinori Ihara Kiyoshi Honda Andrew Seely Megha Ben 
+
+Kwabena Boateng Eric Berkowitz Michelle Phon
+
+TABLE OF CONTENTS xxxv 
+
+**MOTIONS REGARDING THE APPROVAL OF SWEBOK GUIDE V4.0** 
+
+**The following motion was unanimously adopted by the Professional and Educational Activities Board of the IEEE Computer Society in September 2024:** 
+
+*The Professional Activities Board of the IEEE Computer Society finds that the Guide to the Software Engineering Body of Knowledge Version 4.0 has been successfully completed; and endorses the Guide to the Software Engineering Body of Knowledge Version 4.0 and commends it to the IEEE Computer Society Board of Governors for their approval.* 
+
+**The following motion was adopted by the IEEE Computer Society Board of Governors in October 2024:** 
+
+*MOVED, that the Board of Governors of the IEEE Computer Society approves Version 4.0 of the Guide to the Software Engineering Body of Knowledge and authorizes the Chair of the Professional Activities Board to proceed with printing.* 
+
+**MOTIONS REGARDING THE APPROVAL OF SWEBOK GUIDE V3.0** 
+
+*The SWEBOK Guide V3.0 was submitted to ballot by verified IEEE Computer Society mem-*bers in November 2013 with the following question: “Do you approve this manuscript of the SWEBOK Guide V3.0 to move forward to formatting and publication?” The results of this ballot were 259 Yes votes and 5 No votes. 
+
+**The following motion was unanimously adopted by the Professional Activities Board of the IEEE Computer Society in December 2013:** 
+
+*The Professional Activities Board of the IEEE Computer Society finds that the Guide to the Software Engineering Body of Knowledge Version 3.0 has been successfully completed; and endorses the Guide to the Software Engineering Body of Knowledge Version 3.0 and commends it to the IEEE Computer Society Board of Governors for their approval.* 
+
+**The following motion was adopted by the IEEE Computer Society Board of Governors in December 2013:** 
+
+*MOVED, that the Board of Governors of the IEEE Computer Society approves Version 3.0 of the Guide to the Software Engineering Body of Knowledge and authorizes the Chair of the Professional Activities Board to proceed with printing.* 
+
+*Please also note that The SWEBOK Guide V3.0 was submitted by the IEEE Computer Society to* ISO/IEC without any change and was recognized as Technical Report ISO/IEC TR 19759:2015.
+
+*xxxvi SWEBOK ® GUIDE V4.0a* 
+
+**MOTIONS REGARDING THE APPROVAL OF SWEBOK GUIDE 2004 VERSION** 
+
+**The following motion was unanimously adopted by the Industrial Advisory Board of the** **SWEBOK Guide project in February 2004:** 
+
+*The Industrial Advisory Board finds that the Software Engineering Body of Knowledge project initiated in 1998 has been successfully completed; and endorses the 2004 Version of the Guide to the SWEBOK and commends it to the IEEE Computer Society Board of Governors for their approval.* 
+
+**The following motion was adopted by the IEEE Computer Society Board of Governors in February 2004:** 
+
+*MOVED, that the Board of Governors of the IEEE Computer Society approves the 2004 Edition of the Guide to the Software Engineering Body of Knowledge and authorizes the Chair of the Professional Practices Committee to proceed with printing.* 
+
+*Please also note that the 2004 edition of the Guide to the Software Engineering Body of Knowledge* was submitted by the IEEE Computer Society to ISO/IEC without any change and was recognized as Technical Report ISO/IEC TR 19759:2005.
+
+xxxvii 
+
+# Introduction to the Guide 
+
+**ACRONYMS** 
+
+KA Knowledge Area SWEBOK Software Engineering Body 
+
+of Knowledge 
+
+*Publication of the 2014 version of the Guide to the Software Engineering Body of Knowledge (SWEBOK Guide V3) was a major milestone in* establishing software engineering as a recognized engineering discipline. The goal of devel-*oping this update (Version 4) to the SWEBOK Guide is to improve the Guide’s currency, read-*ability, consistency and usability. The content *of the Guide consists of 18 knowledge areas* (KAs) followed by several appendixes. A KA is an identified area of software engineering and is described in terms of its generally accepted knowledge, such as its component processes, practices, inputs, outputs, tools and techniques. Three appendixes provide, respectively, the specifications for the KA descriptions, an annotated set of relevant standards for each *KA, and a list of references cited in the Guide.* 
+
+All KAs have been updated to reflect changes in software engineering since the *publication of the Guide V3, including modern* development practices, new techniques, and the advancement of standards. One significant change is that Agile and DevOps have been incorporated into almost all KAs because these models have been widely accepted since *the previous publication of the Guide. Agile* models typically involve frequent demonstrations of working software to a customer in short, iterative cycles. Agile practices exist across KAs. Furthermore, emerging platforms and technologies, including artificial 
+
+1 https://www.computer.org/sevocab. 
+
+intelligence (AI), machine learning (ML) and the internet of things (IoT), have been incorporated into the foundation KAs. 
+
+To reflect areas that are becoming particularly important in modern software engineering, the following KAs have been added: the Software Architecture KA, Software Security KA and Software Engineering Operations KA. 
+
+*This Guide, written under the auspices of* the Professional and Educational Activities Board of the IEEE Computer Society, represents a next step in the evolution of the software engineering profession. 
+
+**1\. What Is Software Engineering?** 
+
+ISO/IEC/IEEE Systems and Software Engineering Vocabulary (SEVOCAB)1 defines software as “computer programs, procedures and possibly associated documentation and data pertaining to the operation of a computer system”.1 And software engineering is defined as “the application of a systematic, disciplined, quantifiable approach to the development, operation, and maintenance of software; that is, the application of engineering to software” [1]. Historically, software engineering has been defined in various ways, such as “the practical application of scientific knowledge to the design and construction of computer programs and the associated documentation required to develop, operate, and maintain them” [2] and “the technological and managerial discipline concerned with systematic production and maintenance of software products that are developed and modified on time and within cost estimates” [3]. Although these definitions 
+
+*xxxviii SWEBOK ® GUIDE V4.0a* 
+
+differ in detail, they have an essential commonality in that they both deal with software development and maintenance. Furthermore, the application of scientific knowledge (mentioned in the first definition) can be described as a technological discipline (a phrase used in the second definition). As “scientific” implies a systematic and quantifiable approach, the initial definition also expresses an idea common in past definitions of the discipline. 
+
+Software engineering occupies a position between the mathematical and physical disciplines of computer science and technology on the one hand and the work of applying those findings to solve the problems of particular application domains on the other [3]. Science is about discovering new things. On the other hand, engineering is about applying that knowledge to solve real-world problems with limited resources cost-effectively. As such, the engineering discipline of a given scientific field requires skills and knowledge about relevant “practice.” Further, as engineering concerns cost-effective solutions to real-world problems, all engineering disciplines involve engineering economics, which is the analysis of theoretically possible solutions to identify the most cost-effective one. In essence, this *Guide distills the relevant theory of computer* science and engineering into the three foundation KAs, while the remaining KAs catalog the practice and engineering economics of software engineering. 
+
+Software engineering techniques can be viewed as specializations of techniques of more general disciplines, such as project management, systems engineering and quality management [3]. Furthermore, a software project must implement requirements imposed by cross-cutting disciplines such as dependability and safety. Software engineering and computer science are related but distinct in the same way chemical engineering and chemistry are related but distinct. Scientific disciplines, such as computer science and chemistry, aim to extend human knowledge. Effective requirements elicitation techniques, design principles like cohesion and coupling, appropriate branch-merge strategies, conducting a proper 
+
+peer review, and assessing the cost of quality are a few examples of critical software engineering practices that are of little or no concern to computer science. In engineering, science and practice are applied to generate potential solutions to the real-world problem, and engineering economics is used to identify the most cost-effective one. In the same way that it would not make sense to send a chemist to solve a chemical engineering problem, it does not make sense to send a computer scientist to solve a software engineering problem. 
+
+In addition to computer science, software engineering is related to several other disciplines and professional areas, such as industrial engineering, dependability engineering, and safety and security engineering. 
+
+**2\. What Are the Objectives of the** **SWEBOK Guide?** 
+
+*The Guide should not be confused with the* body of knowledge itself, which exists in the *published literature. The Guide’s purpose is* to describe the generally accepted portion of the body of knowledge, organize that portion, and provide topical access to it. 
+
+*The SWEBOK Guide was established with* the following five objectives: 
+
+1\. To promote a consistent view of software engineering worldwide 
+
+2\. To specify the scope and clarify the place of software engineering with respect to other disciplines, such as computer science, project management, computer engineering and mathematics 
+
+3\. To characterize the contents of the software engineering discipline 
+
+4\. To provide topical access to the Software Engineering Body of Knowledge 
+
+5\. To provide a foundation for curriculum development and for individual certification and licensing materials 
+
+The first objective, to promote a consistent worldwide view of software engineering, was supported by a development process that engaged 130+ reviewers from various 
+
+INTRODUCTION TO THE GUIDE xxxix 
+
+countries. More information regarding the development process can be found at www. swebok.org. Professional and learned societies and public agencies involved in software engineering were contacted, made *aware of this project to update the SWEBOK Guide, and invited to participate in the review* process. Associate editors were recruited from America, Asia, Europe, and Oceania. Presentations on the project were made at various international venues. 
+
+The second objective, to specify the scope of software engineering, underlies the fun-*damental organization of the Guide. Material* that falls within this discipline is organized into the 18 KAs listed in Table I.1\. Each KA *is treated as a chapter in this Guide. Among* them, Chapters 1-15 are regarded as the software engineering KAs, while Chapters 16-18 address foundation KAs. 
+
+**TABLE I.1\. THE 18 SWEBOK KAS** 1\. Software Requirements 2\. Software Architecture 3\. Software Design 4\. Software Construction 5\. Software Testing 6\. Software Engineering Operations 7\. Software Maintenance 8\. Software Configuration Management 9\. Software Engineering Management 10\. Software Engineering Process 11\. Software Engineering Models 
+
+and Methods 12\. Software Quality 13\. Software Security 14\. Software Engineering 
+
+Professional Practice 15\. Software Engineering Economics 16\. Computing Foundations 17\. Mathematical Foundations 18\. Engineering Foundations 
+
+In specifying the scope of the discipline, it is also important to identify disciplines that intersect with software engineering. To *this end, the SWEBOK V4 Guide continues* to recognize eleven related disciplines, listed in Table I.2\. Software engineers should, of course, be knowledgeable about these dis-*ciplines (and KA descriptions in this Guide* might refer to them). However, characterizing the knowledge of related disciplines is not an *objective of the SWEBOK Guide.* 
+
+**TABLE I.2\. RELATED DISCIPLINES** Business Analysis Computer Engineering Computer Science Cybersecurity Data Science General Management Information Systems and Technology Mathematics Project Management Quality Management Systems Engineering 
+
+The relevant elements of computer science, mathematics, and engineering foundations are presented in the Computing Foundations KA, Mathematical Foundations KA, and *Engineering Foundations KA of the Guide* (Chapters 16, 17 and 18). 
+
+**HIERARCHICAL ORGANIZATION** 
+
+The organization of the KA chapters supports the third project objective — to characterize the contents of software engineering. The detailed specifications provided by the project’s editorial team to the associate editors regarding the contents of the KA descriptions can be found in Appendix A. 
+
+*The Guide uses a hierarchical organiza-*tional structure to decompose each KA into a set of topics with recognizable labels. Each 
+
+*xl SWEBOK ® GUIDE V4.0a* 
+
+KA provides a two- or three-level breakdown, which provides a reasonable way to *find topics of interest. The Guide treats the* selected topics in a way that is compatible with major schools of thought and separates the topics into subtopics that are generally found in industry and in software engineering literature and standards. The breakdowns are not designed for particular application domains, business uses, management philosophies, development methods and so forth. Each topic description is meant only to give the reader a general understanding of the topic and to enable the reader to find reference material. The body of knowledge is found in the reference materials, not in *the Guide.* 
+
+Software plays a core role in various application and technological domains, such as automotive, legal, health care, and finance. Differences in application domains and business models (e.g., custom applications, and open source applications) and system types (e.g., enterprise and cloud systems, embedded and IoT systems, and AI/ML-based systems) may influence what practices are adopted. Major special techniques and practices specific to certain system types are also discussed in some KAs, especially the Software Requirements KA, the Software Testing KA, the Software Quality KA, the Software Security KA and the Computing Foundations KA. 
+
+**REFERENCE MATERIAL AND MATRIX** 
+
+To provide topical access to the knowledge *— the fourth project objective — the Guide* identifies authoritative reference material for each KA. In addition, Appendix C provides a Consolidated Reference List for the entire *Guide. Each KA includes relevant references* from the Consolidated Reference List as well as a matrix connecting the reference materials to the topics covered. 
+
+*2 A Guide to the Project Management Body of Knowledge, 7th ed., Project Management Institute, 2021, www.pmi.org.* 
+
+*Please note that the Guide does not attempt* to be comprehensive in its citations. Much suitable and excellent material is not referenced. However, the material included in the Consolidated Reference List provides further information about the topics described. 
+
+**DEPTH OF TREATMENT** 
+
+*To achieve the Guide* ’s fifth objective — to provide a foundation for curriculum development, certification and licensing — the *criterion of generally accepted knowledge has* been applied. This is distinct from advanced and research knowledge (on the grounds of maturity) and from specialized knowledge (on the grounds of generality of applica-*tion). The equivalent term generally recognized comes from the Project Management* Institute:2 
+
+“Generally recognized means the knowledge and practices described are applicable to most projects most of the time, and there is consensus about their value and usefulness.” 
+
+*However, the terms generally accepted and generally recognized do not imply that the desig-*nated knowledge should be uniformly applied to all software engineering endeavors — each project’s needs determine what knowledge to apply, and how. However, competent, capable software engineers should be equipped with this knowledge for potential application. Therefore, appropriate selection of generally accepted knowledge should be included in the study material for the software engineering professional certification and licensing examinations that graduates take after gaining four years of work experience. 
+
+**STRUCTURE OF THE KA DESCRIPTIONS** 
+
+Each chapter provides a description of one of the KAs. These descriptions are structured as follows. 
+
+INTRODUCTION TO THE GUIDE xli 
+
+The introduction briefly defines the KA and presents an overview of its scope and its relationship with other KAs. 
+
+The breakdown of topics in each KA constitutes the core of the KA description, showing the decomposition of the KA into subareas, topics and subtopics. For each topic or subtopic, a short description is given, along with one or more references. 
+
+These reference materials were selected as the best available presentation of knowledge related to the topic. A matrix links the topics to the reference materials. 
+
+The last part of each KA description is the list of recommended references and suggested further reading. Relevant standards for each *KA are presented in Appendix B of the Guide.* 
+
+**APPENDIX A. KA DESCRIPTION SPECIFICATIONS** 
+
+Appendix A describes the specifications provided by the editorial team to the associate editors for the content, recommended references, format and style of the KA descriptions. 
+
+**APPENDIX B. IEEE AND ISO/IEC STANDARDS** 
+
+Appendix B presents an annotated list of the relevant standards, mostly from the IEEE 
+
+*and the ISO, for each of the SWEBOK Guide’s KAs.* 
+
+**APPENDIX C. CONSOLIDATED REFERENCE LIST** 
+
+Appendix C contains the consolidated list of recommended references cited in the KAs. These references are marked with an asterisk (\*) in the text. 
+
+**REFERENCES** 
+
+[1] ISO/IEC/IEEE, “ISO/IEC/IEEE 24765:2017 Systems and Software Engineering — Vocabulary,” 2nd ed. 2017\. 
+
+[2] Barry W. Boehm, “Software *Engineering,” IEEE Transactions on Computers, Vol. C-25, No. 12, 1976\.* 
+
+[3] James W. Moore, “Software Engineering Standards: A User’s Road Map,” IEEE Computer Society, 1998.
+
+1-1 
+
+**CHAPTER 01** 
+
+# Software Requirements 
+
+**ACRONYMS** 
+
+ATDD Acceptance Test Driven Development 
+
+BDD Behavior Driven Development 
+
+CIA Confidentiality, Integrity, and Availability 
+
+FSM Functional Size Measurement 
+
+INCOSE International Council on Systems Engineering 
+
+JAD Joint Application Development 
+
+JRP Joint Requirements Planning SME Subject Matter Expert SysML Systems Modeling Language TDD Test Driven Development UML Unified Modeling Language 
+
+**INTRODUCTION** 
+
+Software requirements should be viewed from two perspectives. The first is as an expression of the needs and constraints on a software product or project that contribute to the solution of a real-world problem. The second is that of the activities necessary to develop and maintain the requirements for a software product and for the project that constructs it. Both perspectives are presented in this knowledge area (KA). 
+
+If a team does a poor job of determining the requirements, the project, the product or both are likely to suffer from added costs, delays, cancellations and defects. One reason is that 
+
+each software product requirement generally leads to many design decisions. Each design decision generally leads to many code-level decisions. Each decision can involve several test decisions, as well. In other words, determining the requirements correctly is highstakes work. If not detected and repaired early, missing, misinterpreted and incorrect requirements can induce exponentially cascading rework to correct them. 
+
+Real-world software projects tend to suffer from two primary requirements-re-lated problems: 
+
+1\. incompleteness: stakeholder requirements, and necessary detail, exist that are not revealed and communicated to the software engineers; 
+
+2\. ambiguity: requirements are communicated in a way that is open to multiple interpretations, with only one possible interpretation being correct. 
+
+Beyond the obvious short-term role requirements play in initial software construction, they also play a less recognized but still important role in long-term maintenance. Upon receiving software without any supporting documentation, a software engineer has several means to determine what that code does, such as execute it, step through it with a debugger, hand-execute it, statically analyze it, and so on. The challenge is *determining what that code is intended to do. What is generally referred to as a bug — but is better called a defect — is simply an observ-*able difference between what the software is intended to do and what it does. The role of requirements documentation throughout the service life of the software is to capture and 
+
+*1-2 SWEBOK ® GUIDE V4.0a* 
+
+communicate intent for software engineers who maintain the code but might not have been its original authors. 
+
+The Software Requirements KA concerns developing software requirements and managing those requirements over the software’s service life. This KA provides an understanding that software requirements: 
+
+* are not necessarily a discrete front-end activity of the software development life cycle but rather a process initiated at a project’s beginning that often continues to be refined throughout the software’s entire service life;
+* need to be tailored to the organization and project context.
+
+*The term requirements engineering is often* used to denote the systematic handling of *requirements. For consistency, the term engineering will not be used in this KA other than* for software engineering per se. 
+
+The Software Requirements KA is most closely related to the Software Architecture, Software Design, Software Construction, Software Testing, and Software Maintenance KAs, as well as to the models topic in the Software Engineering Models and Methods KA, in that there can be high value in specifying requirements in model form. 
+
+This KA is also related to the Software Life Cycles topic in the Software Engineering *Process KA, in that this KA’s focus is on what and how requirements work can and should* be done, whereas the project’s life cycle deter-*mines when that work is done. For example,* in a waterfall life cycle, all requirements work *is essentially done in a discrete Requirements phase and is expected to be substantially com-*plete before any architecture, design and construction work occurs in subsequent phases. Under some iterative life cycles, initial, highlevel requirements work is done during an *Inception phase, and further detailing is done during one or more Elaboration phases. In an* Agile life cycle, requirements work is done incrementally, just in time, as each additional element of functionality is constructed. 
+
+*The whats and hows of software require-*ments work on a project should be determined by the nature of the software constructed, not by the life cycle under which it is constructed. Insofar as requirements documentation captures and communicates the software’s intent, downstream maintainers should not be able to discern the life cycle used in earlier development from the form of those requirements alone. 
+
+This KA is also related, but somewhat less so, to the Software Configuration Management, Software Engineering Management and Software Quality KAs. Software Configuration Management approaches can be applied to trace and manage requirements; software quality looks at how well formed the requirements are, and engineering management can use the status of requirements to evaluate the completion of the project. 
+
+**BREAKDOWN OF TOPICS FOR SOFTWARE REQUIREMENTS** 
+
+The topic breakdown for the Software Requirements KA is shown in Figure 1.1\. 
+
+**1\. Software Requirements Fundamentals** 
+
+*1.1\. Definition of a Software Requirement [1\*, c1pp5-6] [2\*, c4p102]* 
+
+*Formally, a software requirement has been* defined as [28]: 
+
+* a condition or capability needed by a user to solve a problem or achieve an objective;
+* a condition or capability that must be met or possessed by a system or system component to satisfy a contract, standard, specification or other formally imposed document;
+* a documented representation or capability as in (1) or (2) above.
+
+This formal definition is extended in this KA to include expressions of a software project’s needs and constraints.
+
+SOFTWARE REQUIREMENTS 1-3 
+
+At its most basic, a software requirement is a property that must be exhibited to solve a real-world problem. It might aim to automate all or part of a task supporting an organization’s business policies and processes, correct existing software’s shortcomings, or control a device — just a few of the many problems for which software solutions are possible. 
+
+Business policies and processes, as well as device functions, are often very complex. By extension, software requirements are often a complex combination of requirements from various stakeholders at different organizational levels who are involved or connected with some aspect of the environment in which the software will operate. 
+
+Clients, customers and users usually impose requirements. However, other third parties, like regulatory authorities and, in some cases, the software organization or the project itself, might also impose requirements. (See also [5, c1] [6, c1] [9, c4].) 
+
+*1.2\. Categories of Software Requirements [1\*, c1pp7-12] [2\*, s4.1]* 
+
+Figure 1.2 shows the categories of software requirements defined in this KA and the 
+
+relationships among those categories. (See also [5, c1] [6, c1] [9, c4].) Each category is further described below. 
+
+*1.3\. Software Product Requirements and Software Project Requirements [1\*, c1pp14-15]* 
+
+*Software product requirements specify the* software’s expected form, fit or function. *Software project requirements — also called process requirements or, sometimes business requirements — constrain the project that* constructs the software. Project requirements often constrain cost, schedule and/or staffing but can also constrain other aspects of a software project, such as testing environments, data migration, user training, and maintenance. Software project requirements can be captured in a project charter or other high-level project initiation document. They are most relevant to how the project is managed (see the Software Engineering Management KA) or what life cycle process should be used (see the Software Engineering Process KA). This KA does not discuss software project requirements further. 
+
+**Software Requirements** 
+
+**Software Requirements Fundamentals** 
+
+Definition of a Software Requirement Categories of Software Requirements Software Product Requirements and Software Project Requirements Functional Requirements Nonfunctional Requirements Technology Constraints Quality of Service Constraints Why Categorize Requirements is Way? System Requirements and Software Requirements Derived Requirements Software Requirements Activities 
+
+Requirements Sources Common Requirements Elicitation Techniques 
+
+Basic Requirements Analysis Economics of Quality of Service Constraints Formal Analysis Addressing Conflict in Requirements 
+
+Unstructured Natural Language Requirements Specification Structured Natural Language Requirements Specification Acceptance Criteria-based Requirements Specification Model-Based Requirements Specification Additional Attributes of Requirements Incremental and Comprehensive Requirements Specification 
+
+Requirements Reviews Simulation and Execution Prototyping 
+
+Requirements Scrubbing Requirements Change Control Scope Matching 
+
+Iterative Nature of the Requirements Process Requirements Prioritization Requirements Tracing Requirements Stability and Volatility Measuring Requirements Requirements Process Quality and Improvement 
+
+**Requirements Elicitation** 
+
+**Requirements Analysis** 
+
+**Requirements Specification** 
+
+**Requirements Validation** 
+
+**Requirements Management** 
+
+**Activities Practical** 
+
+**Considerations Software** 
+
+**Requirements Tools** 
+
+Requirements Management Tools Requirements Modeling Tools Functional Test Case Generation Tools 
+
+**Figure 1.1\. Breakdown of Topics for the Software Requirements KA**
+
+--Image of: https://lh3.googleusercontent.com/notebooklm/ABzcPv3Vx9uXkKwaUi9lEd5ijPbzF8yCyw5rTYIHJDvGAbRjsFXH_KRAdWB3O2Nf7ZCIFBvzhQ9Fh83HD4siLDgPlYQovVR0zek9X4xscYZYdQ8mb9XbnqtcGioqVSk9IAXtznhifZngaw=w545-h291-v0--
+
+*1-4 SWEBOK ® GUIDE V4.0a* 
+
+*1.4\. Functional Requirements [1\*, c1p9] [2\*, s4.1.1]* 
+
+*Functional requirements specify observable* behaviors that the software is to provide — policies to be enforced and processes to be carried out. Example policies in banking software might be “an account shall always have at least one customer as its owner,” and “the balance of an account shall never be negative.” Example processes could specify the meanings of depositing money into an account, withdrawing money from an account and transferring money from one account to another. 
+
+Even highly technical (nonbusiness-ori-ented) software, such as software that implements the transmission control protocol/ internet protocol (TCP/IP) network communications protocol, has policies and processes: “a Port shall be able to exist with zero, one, or many associated Connections, but a Connection shall exist on exactly one associated Port,” “acceptable states of a Connection shall be ‘listen,’ ‘syn sent,’ ‘established,’ ‘closing,’ . . . ,” and “if the time-to-live of a Segment reaches zero, that Segment shall be deleted.” (See [5, c1] [6, c10] [9, c4].) 
+
+*1.5\. Nonfunctional Requirements [1\*, c1pp10-11] [2\*, s4.1.2]* 
+
+*Nonfunctional requirements in some way con-*strain the technologies to be used in the 
+
+implementation: What computing platform(s)? What database engine(s)? How accurate do results need to be? How quickly must results be presented? How many records of a certain type need to be stored? Some nonfunctional requirements might relate to the operation of the software. (See the Operation and Maintenance KA.) (See also [5, c1] [6, c11] [9, c4].) 
+
+The nonfunctional requirements can be further divided into technology constraints and quality of service constraints. They have essential relationships among themselves, which affect them positively or negatively and require that, whenever a nonfunctional requirement is modified, the impact it may cause on others should be considered. 
+
+*1.6\. Technology Constraints* 
+
+These requirements mandate — or prohibit — use of specific, named automation technologies or defined infrastructures. Examples are requirements to use specific computing platforms (e.g., Windows™, macOS™, Android OS™, iOS™), programming languages (e.g., Java, C++, C#, Python), compatibility with specific web browsers (e.g., Chrome™, Safari™, Edge™), given database engines (e.g., Oracle™, SQL Server™, MySQL™), and general technologies (e.g., reduced instruction set computer (RISC), Relational Database). A requirement prohibiting use of pointers would be another example. (See also [9, c4].) 
+
+*1.7\. Quality of Service Constraints* 
+
+These requirements do not constrain the use of specific, named technologies. Instead, these specify acceptable performance levels an automated solution must exhibit. Examples are response time, throughput, accuracy, reliability and scalability. ISO/IEC 25010: “System and software engineering – Systems and software Quality Requirements and Evaluation (SQuaRE) – System and software quality models” [27] contains a large list of the kinds of quality characteristics that can be relevant for software. (See also [9, c4].) Safety 
+
+**Software Requirements** 
+
+**Software Project Requirements** 
+
+**Functional Requirements** 
+
+**Nonfunctional Requirements** 
+
+**Technology Constraints** 
+
+**Quality of Service Constraints** 
+
+**Software Product Requirements** 
+
+**Figure 1.2\. Categories of Software Requirements**
+
+--Image of: https://lh3.googleusercontent.com/notebooklm/ABzcPv0uSkWRDtjac2HEBZ-PO61PS2Oiy33fCcbEaS48FmZel1LMjOuBVKmY47jDkV5Ga7uq0ILsv4g3CgT0ubeJhpIx6VGJzccg6gxlAcdWMr4fUjHmiKv2uMGqIQokInt41blTPqN4Bw=w263-h219-v0--
+
+SOFTWARE REQUIREMENTS 1-5 
+
+and security are also a particularly important topic where requirements tend to be overlooked. (See the Security KA for details on the kinds of specific security requirements that should be considered.) (See also [2\*, c13].) 
+
+*1.8\. Why Categorize Requirements This Way?* 
+
+Categorizing requirements this way is useful for the following reasons: 
+
+* requirements in one category tend to come from different sources than other categories;
+* elicitation techniques often vary by source;
+* analysis techniques vary by category;
+* specification techniques vary by category;
+* validation authorities vary by category;
+* the different categories affect the resulting
+
+software in different ways. 
+
+In addition, organizing the requirements in these categories is beneficial in the following ways: 
+
+* complexity can be better managed because different areas can be addressed separately; software engineers can deal with policy and process complexities without worrying about automation technology issues at the same time (and vice versa). One large problem becomes two smaller *ones. This is classic divide and conquer* complexity management;
+* distinct areas of expertise can be isolated; stakeholders, not software engineers, are the experts in the policies and processes to be automated. Software engineers, not stakeholders, are the technology experts. When a business expert is given interspersed functional and nonfunctional requirements for review or validation, they might give up because they don’t understand — or even care about — the technology issues. The relevant requirements reviewer can focus on just the subset of requirements relevant to them.
+
+*The Perfect Technology Filter originally* described in [18, c1-4] but also explained in [8] and [9, c4] helps separate functional from nonfunctional requirements. Simply put, functional requirements are those that would still need to be stated even if a computer with infinite speed, unlimited memory, zero cost, no failures, etc., existed on which to construct the software. All other software product requirements are constraints on automation technologies and are therefore nonfunctional. 
+
+Large systems often span more than one subject matter area, or domain. As explained in [9, c6], recursive design shows how nonfunctional requirements in a parent domain can become, or can induce, functional requirements in a child domain. For example, a nonfunctional requirement about user security in a parent banking domain can become or can induce functional requirements in a child security domain. Similarly, cross-cutting nonfunctional requirements about auditing and transaction management in a parent banking domain can become or induce functional requirements in a child auditing domain and a child transaction domain. Decomposing large systems into a set of related domains significantly reduces complexity. 
+
+*1.9\. System Requirements and Software Requirements* 
+
+The International Council on Systems *Engineering (INCOSE) defines a system as* “an interacting combination of elements to accomplish a defined objective. These include hardware, software, firmware, people, information, techniques, facilities, services, and other support elements” [24]. 
+
+In some cases, it is either useful or mandatory to distinguish system requirements from software requirements. System requirements apply to larger systems — for example, an autonomous vehicle. Software requirements apply only to an element of software in that larger system. Some software requirements may be derived from system requirements. (See also [5, c1].) In other cases, the software is itself the system of interest, and hardware and 
+
+*1-6 SWEBOK ® GUIDE V4.0a* 
+
+support system are regarded as the platform or infrastructure, so that the system requirements are mostly software requirements. 
+
+*1.10\. Derived Requirements* 
+
+*In practice, requirements can be context-sensi-*tive and can depend on perspective. An external stakeholder can impose a scope requirement, and this would be a requirement for the entire project — even if that project involves hundreds of software engineers. An architect’s decision to use a pipes-and-filters architecture style would not be a requirement from the perspective of the overall project stakeholders, but a design decision. But that same decision, when seen from the perspective of a sub-team responsible for constructing a particular filter, would be considered a requirement. 
+
+The aerospace industry has long used the *term derived requirement to mean a require-*ment that was not made by a stakeholder external to the overall project but that was imposed inside the larger development team. The architect’s pipes-and-filters decision fits this definition. That choice would be seen as a design decision from the point of view of external stakeholders, but as a requirement for the sub-teams responsible for developing each filter. (See also [9, c4].) 
+
+*1.11\. Software Requirements Activities [1\*, c1pp15-18] [2\*, s4.2]* 
+
+Figure 1.3 shows the requirements development and management activities. 
+
+Requirements development, as a whole, can be thought of as “reaching an agreement on what software is to be constructed.” In contrast, requirements management can be considered “maintaining that agreement over time.” Each activity is presented in this KA. Requirements development activities are presented as separate topics, with requirements management presented as a single topic. (See also [5, c1] [6, 2].) 
+
+**2\. Requirements Elicitation [1\*, c6-7] [2\*, s4.3]** 
+
+The goal of requirements elicitation is to surface candidate requirements. It is also called *requirements capture, requirements discovery or requirements acquisition. As stated earlier, one* problem in requirements work on real-world software projects is incompleteness. This can be the result of inadequate elicitation. Although there is no guarantee that a set of requirements is complete, well-executed elicitation helps minimize incompleteness. (See also [5, c2-3] [6, c3-7].) 
+
+*2.1\. Requirements Sources [1\*, c6] [2\*, s4.3]* 
+
+Requirements come — can be elicited — from many different sources. All potential requirements sources should be identified and eval-*uated. A stakeholder can be defined as any* person, group or organization that: 
+
+* is actively involved in the project;
+* is affected by the project’s outcome;
+* can influence the project’s outcome.
+
+Typical stakeholders for software projects include but are not limited to the following: 
+
+* clients — those who pay for the software to be constructed (e.g., organizational management);
+* customers — those who decide whether a software product will be put into service;
+* users — those who interact directly or indirectly with the software; users can
+
+Requirements 
+
+Requirements Development 
+
+Elicitation 
+
+Analysis 
+
+Specification 
+
+Validation 
+
+Scrubbing 
+
+Change Control 
+
+Scope Matching 
+
+Requirements Management 
+
+**Figure 1.3\. Software Requirements Activities**
+
+--Image of: https://lh3.googleusercontent.com/notebooklm/ABzcPv2VORYPNzHmiDKB2qk8UDGzGoFAjPKBmy0u57eViozrpV4dxt4KtMvdjXWp00XEq64vuN__bnKDyd5OJ5bfv7g0EeF-ur7Ufuv847nL-EhUVra9pkPdZXOtH_fLPuld-dpfjBKnAg=w220-h159-v0--
+
+SOFTWARE REQUIREMENTS 1-7 
+
+often be further broken down into distinct user classes that vary in frequency of use, tasks performed, skill and knowledge level, privilege level, and so on; 
+
+* subject matter experts (SMEs);
+* operations staff;
+* first-level product support staff;
+* relevant professional bodies;
+* regulatory agencies;
+* special interest groups;
+* people who can be negatively affected if
+
+the project is successful; 
+
+* developers.
+
+*Stakeholder classes are groups of stake-*holders that have similar perspectives and needs. Working on a software project in terms of stakeholder classes rather than with individual stakeholders can produce important, additional insight. 
+
+Many projects benefit from performing a stakeholder analysis to identify as many important stakeholder classes as possible. This reduces the possibility that the requirements are biased toward better-represented stakeholders and away from less well-represented stakeholders. The stakeholder analysis can also inform negotiation and conflict resolution when requirements from one stakeholder class conflict with requirements from another. (See also [5, c3] [6, c3].) 
+
+Requirements are not limited to only coming from people. Other, non-person requirements sources can include: 
+
+* documentation such as requirements for previous versions, mission statements, concept of operations;
+* other systems;
+* larger business context including organi-
+
+zational policies and processes; 
+
+* computing environment.
+
+*2.2\. Common Requirements Elicitation Techniques [1\*, c7] [2\*, s4.3]* 
+
+A wide variety of techniques can be used to elicit requirements from stakeholders. Some 
+
+techniques work better with certain stakeholder classes than others. Common stakeholder elicitation techniques include the following: 
+
+* interviews;
+* meetings, possibly including brain-
+
+storming; 
+
+* joint application development (JAD)
+
+[13], joint requirements planning (JRP) [14] and other facilitated workshops; 
+
+* protocol analysis;
+* focus groups;
+* questionnaires and market surveys;
+* exploratory prototyping, including
+
+low-fidelity and high-fidelity user interface prototyping [1\*, c15]; 
+
+* user story mapping.
+
+Elicitation can be difficult, and the software engineer needs to know that (for example) users might have difficulty describing their tasks, leave important information unstated or be unwilling or unable to cooperate. Elicitation is not a passive activity. Even if cooperative and articulate stakeholders are available, the software engineer must work hard to elicit the right information. Many product requirements are tacit or can be found only in information that has yet to be collected. 
+
+Requirements can also be elicited from sources other than stakeholders. Such sources and techniques include the following: 
+
+* previous versions of the system;
+* defect tracking database for previous ver-
+
+sions of the system; 
+
+* systems that interface with the system
+
+under development; 
+
+* competitive benchmarking;
+* literature search;
+* quality function deployment (QFD)’s
+
+House of Quality [15]; 
+
+* observation, where the software engineer
+
+studies the work and the environment where the work is being done; 
+
+* apprenticing, where the software engineer learns by doing the work;
+* usage scenario descriptions;
+
+*1-8 SWEBOK ® GUIDE V4.0a* 
+
+* decomposition (e.g., capabilities into epics into features into stories);
+* task analysis [16];
+* design thinking (empathize, define,
+
+ideate, prototype, test) [17]; 
+
+* ISO/IEC 25010: “System and software
+
+engineering – Systems and software Quality Requirements and Evaluation (SQuaRE) – System and software quality models” [27]; 
+
+* security requirements, as discussed in the Security KA;
+* applicable standards and regulations.
+
+(See also [5, c3] [6, c4-7].) 
+
+**3\. Requirements Analysis [1\*, c8-9]** 
+
+Requirements are unlikely to be elicited in their final form. Further investigation is usually needed to reveal the full, true requirements suggested by the originally elicited information. Requirements analysis helps software developers understand the meaning and implications of candidate requirements, both individually and in the context of the overall set of requirements. 
+
+*3.1\. Basic Requirements Analysis [1\*, c8-9]* 
+
+The following list of desirable properties of requirements can guide basic requirements analysis. The software engineer seeks to establish any of these properties that do not hold yet. Each requirement should: 
+
+* be unambiguous (interpretable in only one way);
+* be testable (quantified), meaning that compliance or noncompliance can be clearly demonstrated;
+* be binding, meaning that clients are willing to pay for it and unwilling not to have it;
+* atomic, represent a single decision
+* represent true, actual stakeholder needs;
+* use stakeholder vocabulary;
+* be acceptable to all stakeholders.
+
+The overall collection of requirements should be: 
+
+* complete — The requirements adequately address boundary conditions, exception conditions and security needs;
+* concise — No extraneous content in the requirements
+* internally consistent — No requirement conflicts with any other;
+* externally consistent — No requirement conflicts with any source material;
+* feasible — A viable, cost-effective solution can be created within cost, schedule, staffing, and other constraints.
+
+In some cases, an elicited statement represents a solution to be implemented rather than the true problem to be solved. This risks implementing a suboptimal solution. *The 5-whys technique (e.g., [3\*, c4]) involves* repeatedly asking, “Why is this the requirement?” to converge on the true problem. Repetition stops when the answer is, “If that isn’t done, then the stakeholder’s problem has not been solved.” Often, the true problem is reached in two or three cycles, but the tech-*nique is called 5-whys to incentivize engineers* to push it as far as possible. 
+
+*3.2\. Economics of Quality of Service Constraints [3\*]* 
+
+Quality of service constraints can be particularly challenging. This is generally because engineers do not consider them from an economic perspective [9, c4]. Figure 1.4 illustrates the economic perspective of a typical quality of service constraint, such as capacity, throughput and reliability, where value increases with performance level. This curve is mirrored vertically for quality of service constraints whose value decreases as performance level increases (response time and mean time to repair would be examples). 
+
+ Over the relevant range of performance levels, the stakeholders have a corresponding value if the system performs at that level. The value curve has two important points:
+
+SOFTWARE REQUIREMENTS 1-9 
+
+1\. Perfection point — This is the most favorable level of performance, beyond which there is no additional benefit. Even if the system can perform better than the perfection point, the customer cannot use that capacity. For example, a social media system that supports more members than the world population would have this excess capacity. 
+
+2\. Fail point — This is the least favorable level of performance, beyond which there is no further reduction in benefit. For example, the social media system might need to support at least a minimum market share to be viable as a platform. 
+
+A quantified requirement point, even if stated explicitly, is usually arbitrary. It is often based on what a client feels justified requesting, given what they are paying for the software. Even if the software engineers cannot construct a system that fully achieves the stated requirement point, the software typically still has value; it just has less value than the client expected. Further, the ability to exceed the requirement point can significantly increase value in some cases. 
+
+The cost to achieve a given performance level is usually a step function. First, for a given investment level, there is some maximum achievable performance level. Then, additional investment is needed, and that further investment enables performance up to a new, more favorable maximum. Figure 1.5 illustrates the most cost-effective performance level — the performance level with the maximum positive difference between the value at that performance level and the cost to achieve it. 
+
+(See the Software Engineering Economics KA or [3\*] for more information on performing economic analyses such as this.) 
+
+The software engineer should pay particular attention to positive and negative relationships between quality of service constraints (e.g., Figure 14-1 in [1\*, c14]). Some quality of service constraints are mutually supporting; improving one’s performance level will automatically improve the other’s performance 
+
+level. For example, the more modifiable code is, the more reliable it tends to be, as both modifiability and reliability are, to a degree, a consequence of how clean the code is. On the other hand, the higher the code’s speed, the less modifiable it might be, because high speed is often achieved through optimizations that make the code more complex. 
+
+*3.3\. Formal Analysis [2\*, s12.3.2-12.3.3]* 
+
+Formal analysis has shown benefits in some application domains, particularly high-integ-rity systems (e.g., [5, c6]). The formal expression of requirements depends on the use of a specification language with formally defined semantics. Formality has two benefits. First, formal requirements are precise and concise, 
+
+Value 
+
+Level of Performance 
+
+Fail 
+
+Perfection 
+
+**Figure 1.4\. Value as a Function of Level of** Performance 
+
+$ 
+
+Value 
+
+Cost to deliver 
+
+Most cost-effective level of performance 
+
+Level of performance 
+
+**Figure 1.5\. Most Cost-Effective Level of** Performance
+
+--Image of: https://lh3.googleusercontent.com/notebooklm/ABzcPv3OuIH_n7lzDUKlu9j4JO0OKzJJZ58hrIPdXpo0GkOY2HxftQ1YWgalHXEfzrQaO97aFQPXDpmrtzgo6bQ9eNFlmF4h8Y9wBFMpzX6y_xmF91uzHzm6XZKtjKFhQHYt2YHbcx6e=w263-h182-v0--
+
+--Image of: https://lh3.googleusercontent.com/notebooklm/ABzcPv0J7YzT27miZDB-0xS8WGhtodQKiI2up9tAnsYJahFdF68NWiNKdv6O7zCOSykd5I9vnTyRZlKymd9sWJrNFPy4tTomk4Nt73w5dOd5xpJ71mcXWcUwTf2pe6xAXHXQiA02cUVl1A=w263-h196-v0--
+
+*1-10 SWEBOK ® GUIDE V4.0a* 
+
+which (in principle) will reduce the possibility for misinterpretation. Second, formal requirements can be reasoned over, permitting desired properties of the specified software to be proved. This permits static validation that the software specified by the requirements does have the properties (e.g., absence of deadlock) that the customer, users and software engineer expect it to have. 
+
+This topic is related to Formal Methods in the Software Engineering Models and Methods KA. 
+
+*3.4\. Addressing Conflict in Requirements* 
+
+When a project has more — and more diverse — stakeholders, conflicts among the requirements are more likely. One particularly important aspect of requirements analysis is identifying and managing such conflicts (e.g., [6, c17]). Once conflicting requirements have been identified, the engineer may consider two different approaches to managing that conflict (and possibly other approaches as well) and determine the most appropriate course of action. 
+
+One approach is to negotiate a resolution among the conflicting stakeholders. In most cases, it is unwise for the software engineer to make a unilateral decision, so it becomes necessary to consult with the stakeholders to reach a consensus resolution. It is often also important, for contractual reasons, that such decisions be traceable back to the customer. A *specific example is project scope management —* namely, balancing what’s desired in the stated software product requirements with what can be accomplished given the project requirements of cost, schedule, staffing and other project-level constraints. There are many useful sources for information on negotiation and conflict resolution [25]. 
+
+*Another approach is to apply product family development (e.g., [20]). This involves sepa-*rating requirements into two categories. The *first category contains the invariant requirements. These are requirements that all stake-*holders agree on. The second category contains *the variant requirements, where conflict exists.* 
+
+The software engineer can focus on understanding the range of variations needed to satisfy all stakeholders. The software can be *designed using design to invariants to accommodate the invariant requirements and design for change to incorporate customization points* to configure an instance of the system to best fit relevant stakeholders. In a simple example, some users of a weather application require temperatures displayed in degrees Celsius while others require degrees Fahrenheit. 
+
+**4\. Requirements Specification [1\*, c10-14, c20-26] [2\*, s4.4, c5]** 
+
+*Requirements specification concerns recording* the requirements so they can be both remembered and communicated. Requirements specification might be the most contentious topic in this KA. Debate centers on questions such as: 
+
+* should requirements be written down at all?
+* if requirements are written down, what form should they take?
+* if requirements are written down, should they also be maintained over time?
+
+There are no standard answers to these questions; the answer to each can depend on factors such as the following: 
+
+* the software engineer’s familiarity with the business domain;
+* precedent for this kind of software;
+* degree of risk (e.g., probability, severity)
+
+of incorrect requirements; 
+
+* staff turnover anticipated during the ser-
+
+vice life of the software; 
+
+* geographic distribution of the develop-
+
+ment team members; 
+
+* stakeholder involvement over the course
+
+of the project; 
+
+* whether the use of a third-party service,
+
+packaged solution or open source library is anticipated; 
+
+* whether any design or construction will be outsourced;
+
+SOFTWARE REQUIREMENTS 1-11 
+
+* the degree of requirements-based testing expected;
+* effort needed to use a candidate specification technique;
+* accuracy needed from the require-ments-based estimates;
+* extent of requirements tracing necessary, if any;
+* contractual impositions of requirements specification content and format.
+
+As stated in this KA’s introduction, the *whats and hows of software requirements* work on a project should be determined by the nature of the software constructed, not by the life cycle under which it is constructed. Downstream maintainers should not be able to discern the life cycle used in earlier development from the form of those requirements alone. The chosen life cycle’s effect should be limited to the completeness of the requirements at any point in the project. Under a waterfall life cycle, the requirements are expected to be completely specified at the end of the Requirements phase. Under an Agile life cycle, the requirements are expected to change, grow, or be eliminated continuously and not be complete until the project’s end. 
+
+Some organizations have a culture of documenting requirements; some do not. Dynamic startup projects are often driven by a strong product vision and limited resources; their teams might view requirements documentation as unnecessary overhead. But as these products evolve and mature, software engineers often recognize that they need to recover the requirements that motivated product features in order to assess the impact of proposed changes. Hence, requirements documentation and change management become important to long-term success. A project’s approach to requirements in general, and to requirements specification in particular, may evolve over the service life of that software. 
+
+The most basic recommendation for requirements documentation is to base deci-*sions on an audience analysis. Who are the* different consumers who will need information from a requirements specification? What 
+
+information will they need? How can that information be packaged and presented so that each consumer can get the information they need with the least effort? 
+
+There is a degree of overlap and dependency between requirements analysis and specification. Use of certain requirements specification techniques — particularly model-based requirements specifications — permit and encourage requirements analysis that can go beyond what has already been presented. 
+
+Documented software requirements should be subject to the same configuration management practices as the other deliverables of the software life cycle processes. (See the Configuration Management KA for a detailed discussion.) In addition, when practical, the individual requirements are also subject to configuration management and traceability, which is generally supported by a requirements management tool. (See Topic 8, Software Requirements Tools.) 
+
+There are several general categories of requirements specification techniques, each of which is discussed below. The requirements specification for a given project may also use various techniques. ISO/IEC/IEEE 29148 [26], as well as [1\*, c10-14], [5, c4], [6, c16], and many others offer templates for requirements documentation. 
+
+*4.1\. Unstructured Natural Language Requirements Specification [1\*, c11] [2\*, s4.4.1]* 
+
+*Natural language requirements specifications* express requirements in common, ordinary language. Natural language requirements specifications can be unstructured or structured. 
+
+A typical unstructured natural language requirements specification is a collection of statements in natural language, such as, “The system shall . . . .” For example, business rules are statements that define or constrain some aspect of the structure or the behavior of the business to be automated. “A student cannot register in next semester’s courses if there remain any unpaid tuition fees” is an example of a business rule that serves as a requirement 
+
+*1-12 SWEBOK ® GUIDE V4.0a* 
+
+for a university’s course-registration software. Some projects can publish a user manual as a satisfactory requirements specification, although there are limits to how effective this can be. (See also [5, c4] [26].) 
+
+*4.2\. Structured Natural Language Requirements Specification [1\*, c8] [2\*, s4.4.2]* 
+
+Structured natural language requirements specifications impose constraints on how the requirements are expressed; the goal is to increase precision and conciseness. 
+
+The simplest example might be the actor-action format. The actor is the entity responsible for carrying out the action, and action is what needs to happen. A triggering event might precede the actor, and the action might be followed by an optional condition or qualif ication. The statement “When an order is shipped, the system shall create an Invoice unless the Order Terms are ‘Prepaid’” uses actor-action format. The triggering event is “When an order is shipped.” The actor is “the system.” The action is “create an Invoice.” The condition/ qualif ication is “unless the Order Terms are ‘Prepaid’.” 
+
+Another example is a use case specification template, as shown in Figure 1.6\. (See 
+
+[11] for guidelines on writing good use case specifications.) 
+
+The user story format, “As a

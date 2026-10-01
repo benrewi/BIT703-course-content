@@ -1,0 +1,769 @@
+# URL Routing
+
+## Introduction to URL Routing
+
+URL routing is a fundamental concept in web development that maps URLs to specific code handlers. It enables clean, SEO-friendly URLs and provides a structured way to organize web application endpoints.
+
+## Basic Routing Concepts
+
+### What is URL Routing?
+
+URL routing is the process of matching incoming URLs to specific actions or controllers in your application. Instead of using query strings or file-based routing, modern routing systems use patterns to determine which code should handle a request.
+
+```
+
+```
+
+### Benefits of URL Routing
+
+* **Clean URLs**: More readable and SEO-friendly
+* **Flexibility**: Easy to change URL structure without affecting code
+* **RESTful Design**: Supports REST API conventions
+* **Security**: Hides internal file structure
+* **Maintainability**: Centralized URL management
+
+## Simple Router Implementation
+
+### Basic Router Class
+
+```
+routes[] = [
+            'method' =&gt; strtoupper($method),
+            'pattern' =&gt; $pattern,
+            'handler' =&gt; $handler
+        ];
+    }
+    
+    public function get($pattern, $handler) {
+        $this-&gt;addRoute('GET', $pattern, $handler);
+    }
+    
+    public function post($pattern, $handler) {
+        $this-&gt;addRoute('POST', $pattern, $handler);
+    }
+    
+    public function put($pattern, $handler) {
+        $this-&gt;addRoute('PUT', $pattern, $handler);
+    }
+    
+    public function delete($pattern, $handler) {
+        $this-&gt;addRoute('DELETE', $pattern, $handler);
+    }
+    
+    public function dispatch($requestUri, $requestMethod) {
+        foreach ($this-&gt;routes as $route) {
+            if ($route['method'] !== strtoupper($requestMethod)) {
+                continue;
+            }
+            
+            $pattern = '#^' . $route['pattern'] . '$#';
+            if (preg_match($pattern, $requestUri, $matches)) {
+                array_shift($matches); // Remove full match
+                return $this-&gt;callHandler($route['handler'], $matches);
+            }
+        }
+        
+        $this-&gt;handle404();
+    }
+    
+    private function callHandler($handler, $params) {
+        if (is_callable($handler)) {
+            return call_user_func_array($handler, $params);
+        }
+        
+        if (is_string($handler)) {
+            list($controller, $method) = explode('@', $handler);
+            if (class_exists($controller)) {
+                $instance = new $controller();
+                if (method_exists($instance, $method)) {
+                    return call_user_func_array([$instance, $method], $params);
+                }
+            }
+        }
+        
+        throw new Exception("Handler not found: " . print_r($handler, true));
+    }
+    
+    private function handle404() {
+        http_response_code(404);
+        echo "404 - Page Not Found";
+    }
+}
+
+// Usage example
+$router = new SimpleRouter();
+
+$router-&gt;get('/', function() {
+    echo "Welcome to the home page!";
+});
+
+$router-&gt;get('/user/(\d+)', function($id) {
+    echo "User profile for ID: " . $id;
+});
+
+$router-&gt;get('/user/([a-zA-Z0-9_]+)', function($username) {
+    echo "User profile for: " . $username;
+});
+
+// Dispatch the current request
+$requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$requestMethod = $_SERVER['REQUEST_METHOD'];
+$router-&gt;dispatch($requestUri, $requestMethod);
+?&gt;
+
+```
+
+## Advanced Routing Features
+
+### Named Parameters
+
+```
+compilePattern($pattern);
+        
+        $route = [
+            'method' =&gt; strtoupper($method),
+            'pattern' =&gt; $pattern,
+            'compiled' =&gt; $compiledPattern['pattern'],
+            'params' =&gt; $compiledPattern['params'],
+            'handler' =&gt; $handler
+        ];
+        
+        $this-&gt;routes[] = $route;
+        
+        if ($name) {
+            $this-&gt;namedRoutes[$name] = $route;
+        }
+    }
+    
+    private function compilePattern($pattern) {
+        $params = [];
+        
+        // Replace named parameters {param} with regex
+        $compiled = preg_replace_callback(
+            '/\{([a-zA-Z_][a-zA-Z0-9_]*)\}/',
+            function($matches) use (&amp;$params) {
+                $params[] = $matches[1];
+                return '([^/]+)';
+            },
+            $pattern
+        );
+        
+        // Replace optional parameters {param?}
+        $compiled = preg_replace_callback(
+            '/\{([a-zA-Z_][a-zA-Z0-9_]*)\?\}/',
+            function($matches) use (&amp;$params) {
+                $params[] = $matches[1];
+                return '([^/]*)';
+            },
+            $compiled
+        );
+        
+        return [
+            'pattern' =&gt; '#^' . $compiled . '$#',
+            'params' =&gt; $params
+        ];
+    }
+    
+    public function dispatch($requestUri, $requestMethod) {
+        foreach ($this-&gt;routes as $route) {
+            if ($route['method'] !== strtoupper($requestMethod)) {
+                continue;
+            }
+            
+            if (preg_match($route['compiled'], $requestUri, $matches)) {
+                array_shift($matches); // Remove full match
+                
+                // Create associative array of parameters
+                $params = [];
+                foreach ($route['params'] as $index =&gt; $name) {
+                    $params[$name] = $matches[$index] ?? null;
+                }
+                
+                return $this-&gt;callHandler($route['handler'], $params);
+            }
+        }
+        
+        $this-&gt;handle404();
+    }
+    
+    public function url($name, $params = []) {
+        if (!isset($this-&gt;namedRoutes[$name])) {
+            throw new Exception("Named route '{$name}' not found");
+        }
+        
+        $pattern = $this-&gt;namedRoutes[$name]['pattern'];
+        
+        foreach ($params as $key =&gt; $value) {
+            $pattern = str_replace('{' . $key . '}', $value, $pattern);
+            $pattern = str_replace('{' . $key . '?}', $value, $pattern);
+        }
+        
+        // Remove unused optional parameters
+        $pattern = preg_replace('/\{[^}]+\?\}/', '', $pattern);
+        
+        return $pattern;
+    }
+    
+    private function callHandler($handler, $params) {
+        if (is_callable($handler)) {
+            return call_user_func($handler, $params);
+        }
+        
+        if (is_string($handler)) {
+            list($controller, $method) = explode('@', $handler);
+            if (class_exists($controller)) {
+                $instance = new $controller();
+                if (method_exists($instance, $method)) {
+                    return call_user_func([$instance, $method], $params);
+                }
+            }
+        }
+        
+        throw new Exception("Handler not found");
+    }
+    
+    private function handle404() {
+        http_response_code(404);
+        echo "404 - Page Not Found";
+    }
+}
+
+// Usage with named parameters
+$router = new AdvancedRouter();
+
+$router-&gt;addRoute('GET', '/user/{id}', function($params) {
+    echo "User ID: " . $params['id'];
+}, 'user.show');
+
+$router-&gt;addRoute('GET', '/user/{id}/post/{slug?}', function($params) {
+    echo "User: " . $params['id'] . ", Post: " . ($params['slug'] ?? 'all posts');
+}, 'user.posts');
+
+// Generate URLs
+echo $router-&gt;url('user.show', ['id' =&gt; 123]); // /user/123
+echo $ro
+```
+
+```
+uter-&gt;url('user.posts', ['id' =&gt; 123, 'slug' =&gt; 'hello-world']); // /user/123/post/hello-world
+?&gt;
+
+```
+
+### Route Groups and Middleware
+
+```
+groupStack[] = [
+            'prefix' =&gt; $prefix,
+            'middleware' =&gt; $middleware
+        ];
+        
+        call_user_func($callback, $this);
+        
+        array_pop($this-&gt;groupStack);
+    }
+    
+    public function get($pattern, $handler, $middleware = []) {
+        $this-&gt;addRoute('GET', $pattern, $handler, $middleware);
+    }
+    
+    public function post($pattern, $handler, $middleware = []) {
+        $this-&gt;addRoute('POST', $pattern, $handler, $middleware);
+    }
+    
+    private function addRoute($method, $pattern, $handler, $middleware = []) {
+        $fullPattern = $this-&gt;buildFullPattern($pattern);
+        $fullMiddleware = $this-&gt;buildFullMiddleware($middleware);
+        
+        $this-&gt;routes[] = [
+            'method' =&gt; $method,
+            'pattern' =&gt; $fullPattern,
+            'handler' =&gt; $handler,
+            'middleware' =&gt; $fullMiddleware
+        ];
+    }
+    
+    private function buildFullPattern($pattern) {
+        $prefix = '';
+        
+        foreach ($this-&gt;groupStack as $group) {
+            $prefix .= $group['prefix'];
+        }
+        
+        return $prefix . $pattern;
+    }
+    
+    private function buildFullMiddleware($middleware) {
+        $fullMiddleware = [];
+        
+        foreach ($this-&gt;groupStack as $group) {
+            $fullMiddleware = array_merge($fullMiddleware, $group['middleware']);
+        }
+        
+        return array_merge($fullMiddleware, $middleware);
+    }
+    
+    public function dispatch($requestUri, $requestMethod) {
+        foreach ($this-&gt;routes as $route) {
+            if ($route['method'] !== $requestMethod) {
+                continue;
+            }
+            
+            $pattern = '#^' . $route['pattern'] . '$#';
+            if (preg_match($pattern, $requestUri, $matches)) {
+                array_shift($matches);
+                
+                // Execute middleware
+                foreach ($route['middleware'] as $middlewareClass) {
+                    $middleware = new $middlewareClass();
+                    if (!$middleware-&gt;handle()) {
+                        return; // Middleware blocked the request
+                    }
+                }
+                
+                return $this-&gt;callHandler($route['handler'], $matches);
+            }
+        }
+        
+        $this-&gt;handle404();
+    }
+    
+    private function callHandler($handler, $params) {
+        if (is_callable($handler)) {
+            return call_user_func_array($handler, $params);
+        }
+        
+        if (is_string($handler)) {
+            list($controller, $method) = explode('@', $handler);
+            if (class_exists($controller)) {
+                $instance = new $controller();
+                if (method_exists($instance, $method)) {
+                    return call_user_func_array([$instance, $method], $params);
+                }
+            }
+        }
+        
+        throw new Exception("Handler not found");
+    }
+    
+    private function handle404() {
+        http_response_code(404);
+        echo "404 - Page Not Found";
+    }
+}
+
+// Middleware examples
+class AuthMiddleware {
+    public function handle() {
+        if (!isset($_SESSION['user_id'])) {
+            http_response_code(401);
+            echo "Unauthorized";
+            return false;
+        }
+        return true;
+    }
+}
+
+class AdminMiddleware {
+    public function handle() {
+        if (!isset($_SESSION['is_admin']) || !$_SESSION['is_admin']) {
+            http_response_code(403);
+            echo "Forbidden";
+            return false;
+        }
+        return true;
+    }
+}
+
+// Usage with groups and middleware
+$router = new RouterWithMiddleware();
+
+// Public routes
+$router-&gt;get('/', function() {
+    echo "Home page";
+});
+
+$router-&gt;get('/login', function() {
+    echo "Login page";
+});
+
+// Protected ro
+```
+
+```
+utes
+$router-&gt;group('/user', function($router) {
+    $router-&gt;get('/profile', function() {
+        echo "User profile";
+    });
+    
+    $router-&gt;get('/settings', function() {
+        echo "User settings";
+    });
+}, ['AuthMiddleware']);
+
+// Admin routes
+$router-&gt;group('/admin', function($router) {
+    $router-&gt;get('/dashboard', function() {
+        echo "Admin dashboard";
+    });
+    
+    $router-&gt;get('/users', function() {
+        echo "Manage users";
+    });
+}, ['AuthMiddleware', 'AdminMiddleware']);
+?&gt;
+
+```
+
+## RESTful Routing
+
+### REST Controller Pattern
+
+```
+router = $router;
+    }
+    
+    public function resource($name, $controller) {
+        $singular = rtrim($name, 's');
+        
+        // GET /users - index
+        $this-&gt;router-&gt;get("/{$name}", "{$controller}@index");
+        
+        // GET /users/create - show create form
+        $this-&gt;router-&gt;get("/{$name}/create", "{$controller}@create");
+        
+        // POST /users - store new resource
+        $this-&gt;router-&gt;post("/{$name}", "{$controller}@store");
+        
+        // GET /users/{id} - show specific resource
+        $this-&gt;router-&gt;get("/{$name}/(\d+)", "{$controller}@show");
+        
+        // GET /users/{id}/edit - show edit form
+        $this-&gt;router-&gt;get("/{$name}/(\d+)/edit", "{$controller}@edit");
+        
+        // PUT /users/{id} - update specific resource
+        $this-&gt;router-&gt;put("/{$name}/(\d+)", "{$controller}@update");
+        
+        // DELETE /users/{id} - delete specific resource
+        $this-&gt;router-&gt;delete("/{$name}/(\d+)", "{$controller}@destroy");
+    }
+    
+    public function apiResource($name, $controller) {
+        // API routes (no create/edit forms)
+        $this-&gt;router-&gt;get("/{$name}", "{$controller}@index");
+        $this-&gt;router-&gt;post("/{$name}", "{$controller}@store");
+        $this-&gt;router-&gt;get("/{$name}/(\d+)", "{$controller}@show");
+        $this-&gt;router-&gt;put("/{$name}/(\d+)", "{$controller}@update");
+        $this-&gt;router-&gt;delete("/{$name}/(\d+)", "{$controller}@destroy");
+    }
+}
+
+// Example controller following REST conventions
+class UserController {
+    public function index() {
+        // List all users
+        echo "All users";
+    }
+    
+    public function create() {
+        // Show form to create new user
+        echo "Create user form";
+    }
+    
+    public function store() {
+        // Store new user from form data
+        echo "Store new user";
+    }
+    
+    public function show($id) {
+        // Show specific user
+        echo "Show user {$id}";
+    }
+    
+    public function edit($id) {
+        // Show form to edit user
+        echo "Edit user {$id} form";
+    }
+    
+    public function update($id) {
+        // Update specific user
+        echo "Update user {$id}";
+    }
+    
+    public function destroy($id) {
+        // Delete specific user
+        echo "Delete user {$id}";
+    }
+}
+
+// Usage
+$router = new SimpleRouter();
+$restRouter = new RestRouter($router);
+
+$restRouter-&gt;resource('users', 'UserController');
+$restRouter-&gt;apiResource('api/users', 'ApiUserController');
+?&gt;
+
+```
+
+## URL Generation and Helpers
+
+### URL Helper Functions
+
+```
+url($name, $params);
+        }
+        
+        throw new Exception("Router not configured for named routes");
+    }
+    
+    public static function asset($path) {
+        return self::$baseUrl . '/assets/' . ltrim($path, '/');
+    }
+    
+    public static function redirect($url, $code = 302) {
+        if (strpos($url, 'http') !== 0) {
+            $url = self::url($url);
+        }
+        
+        http_response_code($code);
+        header("Location: {$url}");
+        exit;
+    }
+    
+    public static function currentUrl() {
+        $protocol = isset($_SERVER['HTTPS']) &amp;&amp; $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
+        $host = $_SERVER['HTTP_HOST'];
+        $uri = $_SERVER['REQUEST_URI'];
+        
+        return "{$protocol}://{$host}{$uri}";
+    }
+    
+    public static function previousUrl() {
+        return $_SERVER['HTTP_REFERER'] ?? self::url('/');
+    }
+}
+
+// Configuration
+UrlHelper::setBaseUrl('https://example.com');
+
+// Usage in templates
+echo UrlHelper::url('/user/profile'); // https://example.com/user/profile
+echo UrlHelper::asset('css/style.css'); // https://example.com/assets/css/style.css
+
+// Redirects
+UrlHelper::redirect('/login'); // Redirect to login page
+UrlHelper::redirect('/dashboard', 301); // Permanent redirect
+?&gt;
+
+```
+
+## .htaccess Configuration
+
+### Apache Rewrite Rules
+
+```
+# .htaccess file for clean URLs
+
+RewriteEngine On
+
+# Redirect all requests to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Optional: Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Optional: Remove trailing slashes
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} (.+)/$
+RewriteRule ^ %1 [R=301,L]
+
+# Optional: Remove index.php from URLs
+RewriteCond %{THE_REQUEST} /index\.php[?\s] [NC]
+RewriteRule ^index\.php$ / [R=301,L]
+
+```
+
+### Nginx Configuration
+
+```
+# Nginx configuration for clean URLs
+
+server {
+    listen 80;
+    server_name example.com;
+    root /var/www/html;
+    index index.php;
+
+    # Handle clean URLs
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    # PHP processing
+    location ~ \.php$ {
+        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+
+    # Deny access to sensitive files
+    location ~ /\. {
+        deny all;
+    }
+}
+
+```
+
+## Error Handling and Custom Pages
+
+### Custom Error Pages
+
+```
+
+        
+        
+            
+            
+        
+        
+            <h1>404 - Page Not Found</h1>
+            <p>The page you are looking for could not be found.</p>
+            <a href="/">Go back to homepage</a>
+        
+        ';
+    }
+    
+    private static function getDefault500($message) {
+        return '
+        
+        
+        
+            
+            
+        
+        
+            <h1>500 - Internal Server Error</h1>
+            <p>Something went wrong on our end.</p>
+            ' . ($message ? "<p>Error: {$message}</p>" : '') . '
+            <a href="/">Go back to homepage</a>
+        
+        ';
+    }
+}
+
+// Enhanced router with error handling
+class RobustRouter extends SimpleRouter {
+    protected function handle404() {
+        ErrorHandler::handle404();
+    }
+    
+    protected function callHandler($handler, $params) {
+        try {
+            return parent::callHandler($handler, $params);
+        } catch (Exception $e) {
+            error_log("Router error: " . $e-&gt;getMessage());
+            ErrorHandler::handle500($e-&gt;getMessage());
+        }
+    }
+}
+?&gt;
+
+```
+
+## Performance Optimization
+
+### Route Caching
+
+```
+cacheFile = $cacheFile;
+        $this-&gt;loadFromCache();
+    }
+    
+    public function addRoute($method, $pattern, $handler) {
+        $this-&gt;routes[] = [
+            'method' =&gt; $method,
+            'pattern' =&gt; $pattern,
+            'handler' =&gt; $handler
+        ];
+    }
+    
+    public function saveToCache() {
+        $cacheDir = dirname($this-&gt;cacheFile);
+        if (!is_dir($cacheDir)) {
+            mkdir($cacheDir, 0755, true);
+        }
+        
+        $content = "routes, true) . ";\n";
+        file_put_contents($this-&gt;cacheFile, $content);
+    }
+    
+    private function loadFromCache() {
+        if (file_exists($this-&gt;cacheFile)) {
+            $this-&gt;routes = include $this-&gt;cacheFile;
+        }
+    }
+    
+    public function clearCache() {
+        if (file_exists($this-&gt;cacheFile)) {
+            unlink($this-&gt;cacheFile);
+        }
+    }
+    
+    // Rest of the router implementation...
+}
+
+// Precompiled route matching for better performance
+class FastRouter {
+    private $staticRoutes = [];
+    private $dynamicRoutes = [];
+    
+    public function addRoute($method, $pattern, $handler) {
+        if (strpos($pattern, '{') === false &amp;&amp; strpos($pattern, '(') === false) {
+            // Static route
+            $this-&gt;staticRoutes[$method][$pattern] = $handler;
+        } else {
+            // Dynamic route
+            $this-&gt;dynamicRoutes[$method][] = [
+                'pattern' =&gt; $pattern,
+                'handler' =&gt; $handler,
+                'compiled' =&gt; $this-&gt;compilePattern($pattern)
+            ];
+        }
+    }
+    
+    public function dispatch($requestUri, $requestMethod) {
+        // Check static routes first (faster)
+        if (isset($this-&gt;staticRoutes[$requestMethod][$requestUri])) {
+            return $this-&gt;callHandler($this-&gt;staticRoutes[$requestMethod][$requestUri], []);
+        }
+        
+        // Check dynamic routes
+        if (isset($this-&gt;dynamicRoutes[$requestMethod])) {
+            foreach ($this-&gt;dynamicRoutes[$requestMethod] as $route) {
+                if (preg_match($route['compiled'], $requestUri, $matches)) {
+                    array_shift($matches);
+                    return $this-&gt;callHandler($route['handler'], $matches);
+                }
+            }
+        }
+        
+        $this-&gt;handle404();
+    }
+    
+    private function compilePattern($pattern) {
+        return '#^' . preg_replace('/\{[^}]+\}/', '([^/]+)', $pattern) . '$#';
+    }
+    
+    // Rest of implementation...
+}
+?&gt;
+
+```
+
+URL routing is essential for modern web applications, providing clean URLs, better organization, and improved user experience. Choose the complexity level that matches your project's needs, from simple pattern matching to full-featured routing systems with middleware and caching.

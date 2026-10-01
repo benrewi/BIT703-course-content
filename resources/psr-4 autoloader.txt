@@ -1,0 +1,17 @@
+# PSR-4: Autoloader
+
+# Autoloader [¶](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fwww.php-fig.org%2Fpsr%2Fpsr-4%2F%23autoloader)
+
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC 2119](https://www.google.com/url?sa=E&amp;q=http%3A%2F%2Ftools.ietf.org%2Fhtml%2Frfc2119).
+
+## 1\. Overview [¶](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fwww.php-fig.org%2Fpsr%2Fpsr-4%2F%231-overview)
+
+This PSR describes a specification for [autoloading](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fphp.net%2Fmanual%2Fen%2Flanguage.oop5.autoload.php) classes from file paths. It is fully interoperable, and can be used in addition to any other autoloading specification, including [PSR-0](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fgithub.com%2Fphp-fig%2Ffig-standards%2Fblob%2Fmaster%2Faccepted%2FPSR-0.md). This PSR also describes where to place files that will be autoloaded according to the specification.
+
+## 2\. Specification [¶](https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fwww.php-fig.org%2Fpsr%2Fpsr-4%2F%232-specification)
+
+* The term "class" refers to classes, interfaces, traits, and other similar structures.
+* A fully qualified class name has the following form:
+
+```
+ \
