@@ -7,12 +7,31 @@ Build an **admin dashboard with user management in PHP**, backed by a MySQL data
 - `access roles` (the roles a user can hold)
 - `users` (each user belongs to a role)
 
-<!-- Fill these in so Claude doesn't have to guess:
-- Table and column names (e.g. users: id, username, email, password_hash, role_id ...)
-- Where my project code lives (folder name)
-- PHP style the course uses: procedural / OOP, MySQLi / PDO
-- Assessment brief or marking criteria file, if any
--->
+## Tables
+- users
+- access_roles
+
+# users
+user_id (OK)
+first_name
+last_name
+email
+password
+access_role_id (FK)
+is_active (boolean)
+
+# acess_roles
+access_role_id (PK)
+access_role_name
+
+## Actual file locations
+Files are stored in the repo in the folder: BIT703_A3_5124830
+
+## Assignment brief
+Refer to Assignment.pdf in the main project root
+
+## PHP style
+The course teaches both procedural and object-oriented PHP, using MySQLi (not PDO); its admin panel examples are procedural. My application uses procedural MySQLi with prepared statements, plus a simple User class as a data model.
 
 Features the dashboard needs (from the course's admin panel topics): login and logged-in state, authorisation by role, and Create / Read / Update / Delete for users, with form validation and security.
 
