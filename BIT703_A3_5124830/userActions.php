@@ -147,8 +147,5 @@ function logAudit($conn, $action, $targetName, $details): bool
         return false;
     }
 }
-
-logAudit($conn, 'UPDATE_USER', $firstName . " " . $lastName, "Email: " . $email);
-
 ?>
 

@@ -41,6 +41,6 @@ if (!deleteUser($conn, $userId)) {
     exit;
 }
 
-logAudit($conn, 'ADD_USER', $firstName . " " . $lastName, "Email: " . $email);
+logAudit($conn, 'DELETE_USER', $first . " " . $last, "Email: " . $email);
 
 echo "success";
