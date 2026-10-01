@@ -6,7 +6,7 @@ CREATE TABLE
     IF NOT EXISTS `access_levels` (
         `access_level_id` int NOT NULL,
         `access_level_name` varchar(254) NOT NULL,
-        PRIMARY KEY (access_level_id)
+        PRIMARY KEY (`access_level_id`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO

@@ -98,7 +98,7 @@ $totalUsers = count($users);
                             <input class="w-100 form-control" type="email" id="edit-email" name="email" required>
                             <div class="invalid-feedback">Please enter a valid email address</div>
                         </div>
-                        <label for="edit-access-level-id" class="ps-1">Access Level:</label>
+                        <label for="edit-access-level" class="ps-1">Access Level:</label>
                         <div class="mb-4">
                             <select class="w-100 form-select" id="edit-access-level" name="access_level_id" required>
                                 <option value=""></option>
@@ -110,8 +110,7 @@ $totalUsers = count($users);
                             <div class="invalid-feedback">Please select an access level</div>
                         </div>
                         <div class="mb-3">
-
-                            <label for="edit_is_active" class="ps-1">Active</label>
+                            <label for="edit-is-active" class="ps-1">Active</label>
                             <input type="checkbox" class="form-check-input ms-5" id="edit-is-active" name="is_active">
                         </div>
                     </div>
@@ -187,7 +186,8 @@ $totalUsers = count($users);
                     </div>
                     <label for="add-password" class="ps-1">Password:</label>
                     <div class="mb-4">
-                        <input class="w-100 form-control" type="password" id="add-password" name="password" minlength="6" maxlength="72" required>
+                        <input class="w-100 form-control" type="password" id="add-password" name="password" minlength="6" 
+                        maxlength="72" required>
                     </div>
                     <label for="add-access-level" class="ps-1">Access Level:</label>
                     <div class="mb-4">

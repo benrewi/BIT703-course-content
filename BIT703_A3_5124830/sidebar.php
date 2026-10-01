@@ -1,5 +1,6 @@
 <div
-    class="sidebar-panel position-fixed top-0 start-0 h-100 d-flex flex-column align-items-center text-center text-white bg-black">
+    class="sidebar-panel position-fixed top-0 start-0 h-100 d-flex flex-column align-items-center text-center 
+    text-white bg-black">
     <div class="mt-5 pt-4">
         <h1 class="fs-1 fw-bold mb-0 mt-5 ls-wide">AOTEAROA</h1>
         <p class="fs-5 ls-wider">ADVENTURE GEAR</p>

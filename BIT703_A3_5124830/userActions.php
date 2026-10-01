@@ -5,7 +5,12 @@ function getUsers($conn): array
     try {
         $result = mysqli_query(
             $conn,
-            "SELECT u.user_id, u.first_name, u.last_name, u.email, u.access_level_id, a.access_level_name, u.is_active FROM users u LEFT JOIN access_levels a ON u.access_level_id = a.access_level_id ORDER BY u.user_id ASC"
+            "SELECT 
+            u.user_id, u.first_name, u.last_name, u.email, u.access_level_id, a.access_level_name, u.is_active 
+            FROM users u 
+            LEFT JOIN access_levels a 
+            ON u.access_level_id = a.access_level_id 
+            ORDER BY u.user_id ASC"
         );
         if (!$result) {
             error_log("getUsers failed: " . mysqli_error($conn));
@@ -31,7 +36,9 @@ function getUsers($conn): array
 
 function addUser($conn, User $user): bool
 {
-    $query = "INSERT INTO users (first_name, last_name, email, password, access_level_id, is_active) VALUES (?,?,?,?,?,?)";
+    $query = "INSERT INTO 
+    users (first_name, last_name, email, password, access_level_id, is_active) 
+    VALUES (?,?,?,?,?,?)";
     try {
         $stmt = mysqli_prepare($conn, $query);
         if (!$stmt) {
@@ -63,7 +70,9 @@ function addUser($conn, User $user): bool
 
 function updateUser($conn, User $user): bool
 {
-    $query = "UPDATE users SET first_name = ?, last_name = ?, email = ?, access_level_id = ?, is_active = ? WHERE user_id = ?";
+    $query = "UPDATE users 
+    SET first_name = ?, last_name = ?, email = ?, access_level_id = ?, is_active = ? 
+    WHERE user_id = ?";
     try {
         $stmt = mysqli_prepare($conn, $query);
         if (!$stmt) {

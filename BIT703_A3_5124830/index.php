@@ -4,9 +4,10 @@ require_admin_session();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <title>Admin Dashboard - Aotearoa Adventure Gear</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -111,7 +112,7 @@ require_admin_session();
 
             rows.forEach(row => {
                 const matchesSearch = row.textContent.toLowerCase().includes(searchTerm);
-                const matchesAccess = accessLevel === "" || row.dataset.access === accessLevel;
+                const matchesAccess = accessLevel === "" || row.dataset.accessId === accessLevel;
                 const isActive = row.dataset.active == "1";
                 const matchesActive = isActive || showInactive;
 
@@ -358,7 +359,8 @@ require_admin_session();
             }
 
             if (result == "cannot_delete_self") {
-                errorBox.textContent = "You can't delete your own admin account. Please ask another administrator to remove your access.";
+                errorBox.textContent = "You can't delete your own admin account. 
+                Please ask another administrator to remove your access.";
                 errorBox.classList.remove("d-none");
                 return;
             }

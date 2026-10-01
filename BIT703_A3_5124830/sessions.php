@@ -1,11 +1,5 @@
 <?php
-if (!defined("SESSION_TIMEOUT")) {
-    define("SESSION_TIMEOUT", 900);
-}
-
-if (!defined("ROLE_ADMIN")) {
-    define("ROLE_ADMIN", 1);
-}
+require_once "config/config.php";
 
 ini_set('session.cookie_httponly', '1');
 ini_set('session.use_strict_mode', '1');
@@ -52,7 +46,7 @@ function require_admin_session(bool $isApi = false): void
         reject_session("unauthenticated", $isApi);
     }
 
-       if ((int) ($_SESSION["access_level_id"] ?? 0) !== ROLE_ADMIN) {
+    if ((int) ($_SESSION["access_level_id"] ?? 0) !== ROLE_ADMIN) {
         end_session();
         reject_session("unauthenticated", $isApi);
     }
